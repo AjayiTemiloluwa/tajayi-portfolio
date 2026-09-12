@@ -1,0 +1,614 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Foundation tokens — adopted from Inchstone v2 ─────────────────────
+   LIGHT is the base; `.dark` re-themes. Tailwind reads the *-rgb triplets,
+   hand-written CSS reads the rich vars. */
+:root {
+  /* canonical six tokens — light (paper) values */
+  --ink: #f6f1e7; /* background — warm paper */
+  --parchment: #241e15; /* primary text — warm espresso */
+  --gold: #96762f; /* the single accent — deep brass for light bg */
+  --gold-dim: #7c6338; /* gold at rest / secondary */
+  --ember: #9e4028; /* warnings / overdue / destructive */
+  --moss: #465c41; /* completed / achieved */
+
+  /* RGB triplets (Tailwind alpha support) */
+  --ink-rgb: 246 241 231;
+  --parchment-rgb: 36 30 21;
+  --bg-rgb: 246 241 231;
+  --fg-rgb: 36 30 21;
+  --gold-rgb: 150 118 47;
+  --gold-dim-rgb: 124 99 56;
+  --ember-rgb: 158 64 40;
+  --moss-rgb: 70 92 65;
+  --gold-glow-rgb: 176 142 82;
+
+  /* derived */
+  --bg: #f6f1e7;
+  --fg: #241e15;
+  --fg-rgb: 36 30 21;
+  --surface: rgba(255, 255, 255, 0.55);
+  --surface-solid: #fbf7ef;
+  --mist: rgba(36, 30, 21, 0.08);
+  --mist-solid: #efe9dc;
+  --mist-solid-rgb: 239 233 220;
+  --glass: rgba(36, 30, 21, 0.03);
+  --glass-border: rgba(36, 30, 21, 0.13);
+  --glass-strong: rgba(251, 247, 239, 0.94);
+  --glass-gold-bg: rgba(150, 118, 47, 0.09);
+  --glass-gold-border: rgba(150, 118, 47, 0.28);
+
+  /* fluid type scale — always use these, never a raw px in a component */
+  --text-display: clamp(2.5rem, 4vw + 1.5rem, 4.75rem);
+  --text-h1: clamp(1.75rem, 1.6vw + 1.4rem, 2.5rem);
+  --text-heading: clamp(1.0625rem, 0.3vw + 1rem, 1.25rem);
+  --text-body: clamp(0.875rem, 0.1vw + 0.85rem, 0.9375rem);
+  --text-caption: clamp(0.6875rem, 0.05vw + 0.68rem, 0.75rem);
+  --text-mono: clamp(0.75rem, 0.05vw + 0.74rem, 0.8125rem);
+
+  /* 8pt spacing grid */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+
+  --radius-s: 6px;
+  --radius-m: 8px;
+}
+
+/* ── DARK — the canonical look ── */
+.dark {
+  --ink: #0a0908; /* background — warm near-black */
+  --parchment: #f3efe6; /* primary text / light surfaces */
+  --gold: #b8935a; /* the single accent — muted brass */
+  --gold-dim: #8a6d42; /* gold at rest / secondary */
+  --ember: #7a3b2e;
+  --moss: #4a5d45;
+
+  --ink-rgb: 10 9 8;
+  --parchment-rgb: 243 239 230;
+  --bg-rgb: 10 9 8;
+  --gold-rgb: 184 147 90;
+  --gold-dim-rgb: 138 109 66;
+  --ember-rgb: 122 59 46;
+  --moss-rgb: 74 93 65;
+  --gold-glow-rgb: 203 170 111;
+
+  --bg: #0a0908;
+  --fg: #f3efe6;
+  --fg-rgb: 243 239 230;
+  --surface: rgba(10, 9, 8, 0.6);
+  --surface-solid: #16120f;
+  --mist: rgba(243, 239, 230, 0.08);
+  --mist-solid: #191512;
+  --mist-solid-rgb: 25 21 18;
+  --glass: rgba(243, 239, 230, 0.04);
+  --glass-border: rgba(243, 239, 230, 0.1);
+  --glass-strong: rgba(10, 9, 8, 0.9);
+  --glass-gold-bg: rgba(184, 147, 90, 0.1);
+  --glass-gold-border: rgba(184, 147, 90, 0.2);
+}
+
+/* ── Base ── */
+html {
+  background: var(--bg);
+  color: var(--fg);
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+  overflow-wrap: break-word;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+::selection {
+  background: rgba(var(--gold-rgb) / 0.35);
+  color: var(--fg);
+}
+
+/* Thin gold scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(var(--gold-rgb) / 0.35);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(var(--gold-rgb) / 0.55);
+}
+
+/* ── Dynamic color utilities ── */
+.bg-paper {
+  background: var(--bg);
+}
+.text-ink {
+  color: var(--fg);
+
+/* ═══════════════════════════════════════════════════════════════════
+   SIGNATURE EFFECTS — adopted from Inchstone
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Cursor Light — soft warm glow that trails the pointer ── */
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.cursor-glow.is-active {
+  opacity: 1;
+}
+
+/* Wide ambient pool — the "light on the background" (screen-blended) */
+.cursor-glow-halo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 560px;
+  height: 560px;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(184, 147, 90, 0.16),
+    rgba(184, 147, 90, 0.07) 42%,
+    transparent 72%
+  );
+}
+
+/* Small hot centre — makes the source feel real */
+.cursor-glow-core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  will-change: transform;
+  mix-blend-mode: screen;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(243, 239, 230, 0.13),
+    rgba(184, 147, 90, 0.05) 55%,
+    transparent 78%
+  );
+}
+
+/* Contextual cursor label (set via data-cursor="…") — a solid pill */
+.cursor-glow-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(var(--gold-rgb) / 0.96);
+  color: #0a0908;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.24);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Light theme: deeper gold needs cream text; glow reads as multiply */
+html:not(.dark) .cursor-glow-label {
+  color: #fffdf6;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 1px 8px rgba(88, 67, 28, 0.3);
+}
+html:not(.dark) .cursor-glow-halo {
+  mix-blend-mode: multiply;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(150, 118, 47, 0.12),
+    rgba(150, 118, 47, 0.05) 42%,
+    transparent 72%
+  );
+}
+html:not(.dark) .cursor-glow-core {
+  mix-blend-mode: multiply;
+  background: radial-gradient(
+    circle closest-side,
+    rgba(122, 96, 38, 0.1),
+    rgba(150, 118, 47, 0.04) 55%,
+    transparent 78%
+  );
+}
+
+/* ── Spotlight on every card/box ── */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(184, 147, 90, 0.12),
+    transparent 46%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+.card::before,
+.glass::before,
+.glass-gold::before,
+[data-fx]::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    380px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(184, 147, 90, 0.1),
+    transparent 46%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.card:hover::before,
+.glass:hover::before,
+.glass-gold:hover::before,
+[data-fx]:hover::before {
+  opacity: 1;
+}
+
+/* ── Text nearest the cursor reacts ── */
+.text-lit {
+  transition: text-shadow 0.5s ease, filter 0.5s ease, transform 0.5s ease;
+  filter: brightness(1.06);
+  text-shadow: 0 0 18px rgba(255, 241, 200, 0.2);
+}
+h1.text-lit,
+h2.text-lit,
+h3.text-lit,
+.font-display.text-lit {
+  filter: brightness(1.09);
+  text-shadow: 0 0 36px rgba(255, 236, 190, 0.34), 0 0 2px rgba(255, 241, 200, 0.2);
+}
+h4.text-lit,
+h5.text-lit,
+h6.text-lit {
+  filter: brightness(1.18);
+  letter-spacing: 0.012em;
+}
+p.text-lit,
+li.text-lit,
+blockquote.text-lit,
+dd.text-lit,
+figcaption.text-lit {
+  transform: translateY(-1px);
+  text-shadow: 0 7px 24px rgba(255, 243, 205, 0.18);
+}
+
+}
+.bg-surface {
+  background: var(--surface);
+}
+.bg-surface-solid {
+  background: var(--surface-solid);
+}
+.bg-mist {
+  background: var(--mist);
+}
+
+/* ── Surfaces (glass family) ── */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+}
+.glass-strong {
+  background: var(--glass-strong);
+  border: 1px solid var(--glass-border);
+}
+.glass-gold {
+  background: var(--glass-gold-bg);
+  border: 1px solid var(--glass-gold-border);
+}
+
+/* ── Hairline — 1px gold-dim at 20% ── */
+.hairline {
+  border: 1px solid rgba(var(--gold-rgb) / 0.2);
+}
+.hairline-top {
+  border-top: 1px solid rgba(var(--gold-rgb) / 0.2);
+}
+.hairline-bottom {
+  border-bottom: 1px solid rgba(var(--gold-rgb) / 0.2);
+}
+.hairline-left {
+  border-left: 1px solid rgba(var(--gold-rgb) / 0.2);
+}
+.hairline-right {
+  border-right: 1px solid rgba(var(--gold-rgb) / 0.2);
+}
+
+
+/* ── Desktop scroll-ripple trail ── */
+.scrollfx-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 72;
+  pointer-events: none;
+  overflow: hidden;
+}
+.scroll-ripple {
+  position: absolute;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--gold-rgb) / 0.1);
+  box-shadow: inset 0 0 6px rgba(var(--gold-rgb) / 0.03);
+  transform: translate(-50%, -50%) scale(0.85);
+  opacity: 0.2;
+  animation: scroll-ripple 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+@keyframes scroll-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0.2;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.55);
+    opacity: 0;
+  }
+}
+
+/* ── Animated conic border beam ── */
+@property --beam-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes beam-spin {
+  to {
+    --beam-angle: 360deg;
+  }
+}
+.border-beam {
+  position: relative;
+  box-shadow: 0 0 0 1px rgba(var(--gold-rgb) / 0.35);
+}
+.border-beam::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0%,
+    rgba(var(--gold-rgb) / 0.9) 14%,
+    transparent 30%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: beam-spin 3.4s linear infinite;
+  pointer-events: none;
+
+/* ── Touch FX (mobile) ── */
+.touch-halo {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 999px;
+  background: radial-gradient(closest-side, rgba(255, 243, 196, 0.22), transparent 70%);
+  mix-blend-mode: screen;
+  transform: translate(-50%, -50%) scale(0.4);
+  animation: touch-halo 0.7s ease-out forwards;
+  pointer-events: none;
+}
+.touch-ripple {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  border: 1px solid rgba(var(--gold-rgb) / 0.4);
+  transform: translate(-50%, -50%) scale(0.3);
+  animation: touch-ripple 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  pointer-events: none;
+}
+.touch-spark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  margin: -1.5px;
+  border-radius: 999px;
+  background: #ffe9a8;
+  box-shadow: 0 0 8px 1.5px rgba(255, 222, 130, 0.75);
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+  animation: touch-spark 0.75s cubic-bezier(0.12, 0.8, 0.3, 1) forwards;
+  pointer-events: none;
+}
+@keyframes touch-halo {
+  to {
+    transform: translate(-50%, -50%) scale(1.25);
+    opacity: 0;
+  }
+}
+@keyframes touch-ripple {
+  to {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes touch-spark {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+/* ── Marquee ticker ── */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee-x 36s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Scroll reveal (IntersectionObserver in Reveal.tsx) ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Per-letter hero rise */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em) rotate(4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+.rise-in {
+  opacity: 0;
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Availability dot */
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  80%,
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+.ping-soft {
+  animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Ambient gold haze behind hero */
+.hero-haze {
+  background: radial-gradient(
+    ellipse 80% 55% at 50% 0%,
+    rgba(var(--gold-rgb) / 0.13),
+    transparent 70%
+  );
+}
+
+/* Gold gradient display text */
+.text-gold-grad {
+  background: linear-gradient(
+    115deg,
+    rgba(var(--gold-rgb) / 1) 0%,
+    rgba(var(--gold-glow-rgb) / 1) 45%,
+    rgba(var(--gold-rgb) / 0.75) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Hover outline for work rows (overrides the glass hairline) */
+.gold-outline {
+  border-color: rgb(var(--gold-rgb) / 0.45) !important;
+}
+
+/* ── Reduced motion: stillness is a feature ── */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .scroll-ripple,
+  .touch-halo,
+  .touch-ripple,
+  .touch-spark,
+  .ping-soft,
+  .border-beam::before {
+    animation: none !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .rise-in {
+    opacity: 1;
+    animation: none;
+  }
+  .text-lit,
+  h1.text-lit,
+  h2.text-lit,
+  h3.text-lit,
+  .font-display.text-lit,
+  h4.text-lit,
+  h5.text-lit,
+  h6.text-lit,
+  p.text-lit,
+  li.text-lit,
+  blockquote.text-lit,
+  dd.text-lit,
+  figcaption.text-lit {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+}
