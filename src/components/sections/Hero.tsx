@@ -4,14 +4,13 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 import { ArrowRight, Award, ChevronDown, Download, MapPin } from 'lucide-react'
-import { profile, heroStats, focusAxes } from '@/data/resume'
+import { profile, focusAxes } from '@/data/resume'
 import { RotatingWord } from '@/components/ui/RotatingWord'
-import { CountUp } from '@/components/anim/CountUp'
 
 /**
  * Hero — Noguier-style choreography over the B&W identity: per-letter
- * rise, masked entrances, count-up stats, looping scroll cue, and the
- * archival portrait plate — grayscale, brown vignette, film grain.
+ * rise, masked entrances, looping scroll cue, and the archival portrait
+ * plate — grayscale, brown vignette, film grain.
  */
 
 function Letters({ text, delay = 0, className = '' }: { text: string; delay?: number; className?: string }) {
@@ -157,28 +156,9 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* stats — count up */}
-        <motion.dl
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 1.15 }}
-          className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-xl hairline bg-sepia/10 sm:grid-cols-4"
-        >
-          {heroStats.map((s) => {
-            const m = /^(\d+)(.*)$/.exec(s.value)
-            return (
-              <div key={s.label} className="glass px-5 py-6" data-fx>
-                <dd className="font-mono text-3xl font-bold tabular-nums text-sepia">
-                  <CountUp value={m ? Number(m[1]) : 0} suffix={m ? m[2] : s.value} />
-                </dd>
-                <dt className="mt-2 text-xs leading-snug text-fg/55">{s.label}</dt>
-              </div>
-            )
-          })}
-        </motion.dl>
 
         {/* scroll cue */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-16 flex justify-center">
           <motion.div
             animate={reduced ? {} : { y: [0, 9, 0] }}
             transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut' }}

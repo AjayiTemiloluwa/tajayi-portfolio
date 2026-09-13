@@ -33,13 +33,6 @@ export const focusAxes = [
   'Finance',
 ] as const
 
-export const heroStats = [
-  { value: '4', label: 'SPE manuscripts in the pipeline' },
-  { value: '94%', label: 'peak kick-detection accuracy' },
-  { value: '40%', label: 'manual reporting eliminated' },
-  { value: '4', label: 'continents taught' },
-] as const
-
 export const marqueeItems = [
   'Ensemble Learning',
   'Explainable AI',
