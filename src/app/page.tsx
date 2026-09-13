@@ -4,6 +4,8 @@ import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
 import { Balance } from "@/components/sections/Balance";
 import { Work } from "@/components/sections/Work";
+import { Research } from "@/components/sections/Research";
+import { PhotoScroll } from "@/components/sections/PhotoScroll";
 import { Experience } from "@/components/sections/Experience";
 import { Community } from "@/components/sections/Community";
 import { Skills } from "@/components/sections/Skills";
@@ -29,6 +31,8 @@ export default function Home() {
             <Hero />
             <Marquee />
             <Balance />
+            <Research />
+            <PhotoScroll />
             <Work />
             <Experience />
             <Community />

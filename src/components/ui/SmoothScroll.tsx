@@ -9,7 +9,7 @@ import type Lenis from 'lenis'
  * (perspective + rotateX driven by scroll velocity) and eases flat the moment
  * you stop. Adopted from Inchstone, adapted to window scrolling.
  */
-const BEND_MAX_DEG = 7
+const BEND_MAX_DEG = 5
 const BEND_GAIN = 0.32
 const BEND_EASE = 0.14
 const BEND_SETTLE = 0.02
@@ -48,7 +48,7 @@ export function SmoothScroll() {
     import('lenis')
       .then(({ default: LenisCtor }) => {
         if (cancelled) return
-        lenis = new LenisCtor({ syncTouch: false })
+        lenis = new LenisCtor({ lerp: 0.1, wheelMultiplier: 1.05, syncTouch: false })
         document.documentElement.classList.add('lenis', 'lenis-smooth')
         const content = document.querySelector<HTMLElement>('[data-scroll-content]')
         content?.style.setProperty('transform-origin', '50% 0px')

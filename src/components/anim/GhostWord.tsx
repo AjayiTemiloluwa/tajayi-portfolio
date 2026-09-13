@@ -6,7 +6,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
 /**
  * GhostWord — a giant outlined display word parked behind a section,
  * drifting horizontally as you scroll through (Robin Noguier energy).
- * Purely decorative; stroke color follows the theme gold token.
+ * Purely decorative; stroke color follows the theme sepia token.
  */
 export function GhostWord({
   word,
@@ -32,8 +32,8 @@ export function GhostWord({
         className="whitespace-nowrap font-display font-bold leading-none text-transparent"
         style={
           reduced
-            ? { WebkitTextStroke: '1px rgb(var(--gold-rgb) / 0.13)' }
-            : { x, WebkitTextStroke: '1.5px rgb(var(--gold-rgb) / 0.2)' }
+            ? { WebkitTextStroke: '1px rgb(var(--sepia-rgb) / 0.1)' }
+            : { x, WebkitTextStroke: '1.5px rgb(var(--sepia-rgb) / 0.14)' }
         }
       >
         <span className="text-[22vw] lg:text-[15vw]">{word}</span>

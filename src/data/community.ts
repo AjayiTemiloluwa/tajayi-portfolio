@@ -7,19 +7,19 @@ export const leadership = [
     role: 'Logistics Team Lead',
     org: 'Society of Petroleum Engineers (SPE), UI',
     period: 'Apr 2025 — Jan 2026',
-    body: 'Managed logistics for major energy & climate events like Ambizero — cutting operational costs by 23% with structured data insights driving efficiency and engagement.',
+    body: 'Logistics for energy & climate events like Ambizero — costs down 23%, engagement up.',
   },
   {
     role: 'Head of IT',
     org: 'Krawdwise Africa',
     period: 'Dec 2024 — Dec 2025',
-    body: 'Led a team deploying advanced systems that boosted operational efficiency and performance by 30%, with automated workflows supporting data-driven decisions.',
+    body: 'Led IT systems — efficiency up 30%, automated workflows throughout.',
   },
   {
     role: 'Volunteer',
     org: 'Junior Achievers Nigeria',
     period: 'Nov 2024 — Dec 2025',
-    body: 'Supported Generative AI, Set4Lyf and Global Money Week programs with workshops and mentorship — tracking engagement and impact with spreadsheets and Python data frames.',
+    body: 'Gen-AI, Set4Lyf and Global Money Week workshops and mentorship.',
   },
 ] as const
 

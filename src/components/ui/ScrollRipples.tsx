@@ -3,7 +3,7 @@
 import { useEffect } from 'react'
 
 /**
- * ScrollRipples — soft gold ripples fan out at the pointer while the user
+ * ScrollRipples — soft sepia ripples fan out at the pointer while the user
  * scrolls (wheel on desktop, touch drag on mobile). Adopted from Inchstone.
  * Respects prefers-reduced-motion.
  */

@@ -23,3 +23,11 @@ next-env.d.ts
 # local dev logs
 /build_log.txt
 /server_log.txt
+
+# personal source photos (optimized copies live in /public/images)
+/PERSONAL PORTFOLIO FILES/
+
+# document extraction artifacts (raw draft text of unpublished papers)
+/_extracted/
+/_extract_docx.ps1
+/_extract_pdf.js

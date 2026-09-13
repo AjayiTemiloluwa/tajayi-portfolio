@@ -5,11 +5,11 @@ import { useEffect } from 'react'
 /**
  * ScrollFx — global pointer-FX engine (delegated, no per-card JS).
  * Adopted from Inchstone:
- * - cursor spotlight -> radial gold highlight following the pointer over
- *   every card/box (.spotlight-card, .card, .glass, .glass-gold, [data-fx])
+ * - cursor spotlight -> radial sepia highlight following the pointer over
+ *   every card/box (.spotlight-card, .card, .glass, .glass-sepia, [data-fx])
  * - .tilt-card       -> subtle 3D tilt toward the pointer
  * - text-lit         -> the text block nearest the cursor brightens
- * - scroll ripple    -> soft gold ripples fan out at the cursor while scrolling
+ * - scroll ripple    -> soft sepia ripples fan out at the cursor while scrolling
  * Respects prefers-reduced-motion by doing nothing at all.
  */
 export function ScrollFx() {
@@ -19,7 +19,7 @@ export function ScrollFx() {
 
     let raf = 0
 
-    const CARD_SELECTOR = '.spotlight-card, .card, .glass-gold, .glass, [data-fx]'
+    const CARD_SELECTOR = '.spotlight-card, .card, .glass-sepia, .glass, [data-fx]'
     const TEXT_SELECTOR =
       'h1,h2,h3,h4,h5,h6,p,li,blockquote,figcaption,dt,dd,.font-display,[data-touch-text]'
     let litText: HTMLElement | null = null

@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 /**
  * TouchFx — mobile-first touch feedback: a soft halo, an expanding ripple
- * ring, and gold sparks flung outward on tap. Adopted from Inchstone.
+ * ring, and sepia sparks flung outward on tap. Adopted from Inchstone.
  * Respects prefers-reduced-motion.
  */
 export function TouchFx() {

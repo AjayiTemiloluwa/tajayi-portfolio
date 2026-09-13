@@ -15,8 +15,8 @@ export default function WorkPage() {
     <PageShell
       ghost="WORK"
       kicker="Selected work"
-      title={[{ text: 'Things I’ve built that ' }, { text: 'decide.', gold: true }]}
-      blurb="Systems shipped at work, school and in between — each one measured by what it saved, surfaced or settled."
+      title={[{ text: 'Things I’ve built that ' }, { text: 'decide.', sepia: true }]}
+      blurb="Shipped at Sankore, SLB and in between."
     >
       <Work />
     </PageShell>

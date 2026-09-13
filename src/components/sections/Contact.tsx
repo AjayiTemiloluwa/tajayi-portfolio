@@ -53,7 +53,7 @@ export function Contact() {
       <GhostWord word="HELLO" className="top-6 sm:top-10" range={80} />
 
       <div className="relative mx-auto w-full max-w-6xl px-5 pt-24 sm:px-8 sm:pt-32">
-        <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-gold">
+        <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">
           Say hello
         </motion.p>
 
@@ -61,7 +61,7 @@ export function Contact() {
           className="mt-4 max-w-4xl font-display font-bold leading-[1.02] tracking-tight text-parchment"
           style={{ fontSize: 'clamp(2.25rem, 6vw + 1rem, 5.25rem)' }}
         >
-          <MaskText segments={[{ text: 'Let’s build something that ' }, { text: 'lasts.', gold: true }]} stagger={0.07} />
+          <MaskText segments={[{ text: 'Let’s build something that ' }, { text: 'lasts.', sepia: true }]} stagger={0.07} />
         </h2>
 
         <motion.p
@@ -71,8 +71,7 @@ export function Contact() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-fg/65 sm:text-lg"
         >
-          Whether it&apos;s an automation system, an analytics problem, or a room that needs a teacher — my inbox is open, and I reply
-          like the deadline depends on it.
+          My inbox is open. I reply like the deadline depends on it.
         </motion.p>
 
         {/* links */}
@@ -90,12 +89,12 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: '-5% 0px' }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.25 + i * 0.08 }}
-                className={`group flex h-full flex-col justify-between gap-6 rounded-xl p-6 transition-transform hover:-translate-y-0.5 ${l.featured ? 'border-beam glass-gold spotlight-card' : 'glass spotlight-card'}`}
+                className={`group flex h-full flex-col justify-between gap-6 rounded-xl p-6 transition-transform hover:-translate-y-0.5 ${l.featured ? 'border-beam glass-sepia spotlight-card' : 'glass spotlight-card'}`}
               >
-                <Icon className="h-5 w-5 text-gold" />
+                <Icon className="h-5 w-5 text-sepia" />
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-fg/50">{l.label}</p>
-                  <p className="mt-1 break-all text-sm font-medium text-parchment transition group-hover:text-gold">{l.value}</p>
+                  <p className="mt-1 break-all text-sm font-medium text-parchment transition group-hover:text-sepia">{l.value}</p>
                 </div>
               </motion.a>
             )
@@ -107,7 +106,7 @@ export function Contact() {
       <div className="relative mt-16 hairline-top">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
           <div className="flex items-center gap-3">
-            <span className="hairline flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-gold">{profile.initials}</span>
+            <span className="hairline flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-sepia">{profile.initials}</span>
             <span className="font-display font-bold text-parchment">{profile.name}</span>
           </div>
           <p className="font-mono text-[11px] text-fg/40">
@@ -116,7 +115,7 @@ export function Contact() {
           <a
             href="#top"
             data-cursor="TO TOP"
-            className="glass inline-flex h-9 w-9 items-center justify-center rounded-full text-fg/60 transition hover:border-gold hover:text-gold"
+            className="glass inline-flex h-9 w-9 items-center justify-center rounded-full text-fg/60 transition hover:border-sepia hover:text-sepia"
             aria-label="Back to top"
           >
             <ArrowUp className="h-4 w-4" aria-hidden="true" />

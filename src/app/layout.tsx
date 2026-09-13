@@ -24,22 +24,26 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://temiloluwaajayi.vercel.app"),
-  title: "Temiloluwa Samuel Ajayi — AI & Automation Analyst",
+  title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
   description:
-    "Data scientist, financial engineer and educator building a deliberately balanced life — intelligent automation, honest analytics and people who grow. Lagos, Nigeria.",
+    "Petroleum engineer turned AI builder — ensemble ML for well control, satellite analytics for gas flaring, and financial engineering for the energy transition. Lagos, Nigeria.",
   keywords: [
     "Temiloluwa Ajayi",
-    "AI & Automation Analyst",
-    "Data Scientist",
+    "AI",
+    "Energy",
+    "Sustainability",
+    "Well Control",
+    "Machine Learning",
+    "SPE",
     "Financial Engineering",
-    "Python",
+    "Gas Flaring",
     "Lagos",
     "Portfolio",
   ],
   openGraph: {
-    title: "Temiloluwa Samuel Ajayi — Digital Resume",
+    title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
     description:
-      "AI & automation, data science and financial engineering — with a deliberately balanced life. Explore the work.",
+      "Machine learning for the energy problem — well-control AI, flaring analytics, fluid design. Drafts inside.",
     type: "website",
   },
 };

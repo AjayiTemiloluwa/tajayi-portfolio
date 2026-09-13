@@ -11,7 +11,7 @@ export function Nav() {
     <header className="sticky top-0 z-40 hairline-bottom bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
         <a href="#top" className="flex min-w-0 items-center gap-3" aria-label={`${profile.name} — home`}>
-          <span className="hairline flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold/10 font-display text-sm font-bold text-gold">
+          <span className="hairline flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sepia/10 font-display text-sm font-bold text-sepia">
             {profile.initials}
           </span>
           <span className="hidden min-w-0 font-display text-base font-bold tracking-tight text-parchment sm:block">
@@ -29,7 +29,7 @@ export function Nav() {
             <Link
               key={href}
               href={href}
-              className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg/55 transition hover:text-gold"
+              className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg/55 transition hover:text-sepia"
             >
               {label}
             </Link>
@@ -49,7 +49,7 @@ export function Nav() {
           <a
             href="#contact"
             data-cursor="SAY HELLO"
-            className="inline-flex h-9 items-center justify-center rounded-lg bg-gold px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-gold-dim"
+            className="inline-flex h-9 items-center justify-center rounded-lg bg-sepia px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-sepia-dim"
           >
             Contact
           </a>

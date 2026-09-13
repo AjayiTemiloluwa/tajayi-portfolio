@@ -30,7 +30,7 @@ export function PageShell({
       <header className="sticky top-0 z-40 hairline-bottom bg-paper/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
           <Link href="/" className="flex min-w-0 items-center gap-3" aria-label={`${profile.name} — home`}>
-            <span className="hairline flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gold/10 font-display text-sm font-bold text-gold">
+            <span className="hairline flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sepia/10 font-display text-sm font-bold text-sepia">
               {profile.initials}
             </span>
             <span className="hidden min-w-0 font-display text-base font-bold tracking-tight text-parchment sm:block">
@@ -47,7 +47,7 @@ export function PageShell({
               <Link
                 key={href}
                 href={href}
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg/55 transition hover:text-gold"
+                className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg/55 transition hover:text-sepia"
               >
                 {label}
               </Link>
@@ -56,7 +56,7 @@ export function PageShell({
           <Link
             href="/#contact"
             data-cursor="SAY HELLO"
-            className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg bg-gold px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-gold-dim"
+            className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg bg-sepia px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-sepia-dim"
           >
             Contact
           </Link>
@@ -70,11 +70,11 @@ export function PageShell({
             <Link
               href="/"
               data-cursor="HOME"
-              className="inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fg/45 transition hover:text-gold"
+              className="inline-flex items-center gap-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fg/45 transition hover:text-sepia"
             >
               <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" /> Back home
             </Link>
-            <p className="mt-8 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-gold">{kicker}</p>
+            <p className="mt-8 font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">{kicker}</p>
             <h1 className="mt-4 max-w-4xl font-display text-3xl font-bold leading-[1.05] tracking-tight text-parchment sm:text-5xl">
               <MaskText segments={title} stagger={0.06} />
             </h1>
@@ -88,7 +88,7 @@ export function PageShell({
       <footer className="hairline-top">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
           <div className="flex items-center gap-3">
-            <span className="hairline flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-gold">
+            <span className="hairline flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-sepia">
               {profile.initials}
             </span>
             <span className="font-display font-bold text-parchment">{profile.name}</span>
@@ -97,7 +97,7 @@ export function PageShell({
           <Link
             href="/#contact"
             data-cursor="SAY HELLO"
-            className="glass inline-flex h-9 items-center gap-2 rounded-full px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-fg/60 transition hover:border-gold hover:text-gold"
+            className="glass inline-flex h-9 items-center gap-2 rounded-full px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-fg/60 transition hover:border-sepia hover:text-sepia"
           >
             Say hello <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
           </Link>

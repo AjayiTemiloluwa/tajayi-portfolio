@@ -18,7 +18,7 @@ export const work: WorkItem[] = [
     year: '2026',
     stack: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'AWS S3'],
     summary:
-      'Full-stack platform for regulatory compliance tracking, litigation case management and reporting — with Google Workspace integration and automated PDF report generation.',
+      'Full-stack compliance platform — regulatory tracking, litigation management, automated reporting. Google Workspace and AWS S3 built in.',
     featured: true,
   },
   {
@@ -27,7 +27,7 @@ export const work: WorkItem[] = [
     year: '2026',
     stack: ['n8n', 'Branded HTML email', 'Audit logging'],
     summary:
-      'Daily reminder engine routing pre-deadline nudges and multi-level post-deadline escalations to team-specific inboxes, with full audit logging and deduplication.',
+      'Daily reminder engine — pre-deadline nudges, multi-level escalations, full audit logging.',
   },
   {
     title: 'Biometric Attendance Prototype',
@@ -35,7 +35,7 @@ export const work: WorkItem[] = [
     year: '2025',
     stack: ['Python', 'Data validation', 'Excel dashboards'],
     summary:
-      'Structured data logging with validation logic and automated reporting outputs — cutting processing delays by 35% and sharpening access-control monitoring.',
+      'Data logging with validation and automated reporting — 35% faster processing, sharper access control.',
   },
   {
     title: 'Data Pipelines & KPI Tracking',
@@ -43,7 +43,7 @@ export const work: WorkItem[] = [
     year: '2024',
     stack: ['Python', 'SQL', 'Advanced Excel'],
     summary:
-      'Automated relational pipelines plus AI-assisted performance and engagement tracking — reducing manual reporting by 40% and lifting KPI visibility.',
+      'Automated pipelines plus AI-assisted tracking — 40% less manual reporting, clearer KPIs.',
   },
   {
     title: 'Conflict Impact Research',
@@ -51,7 +51,7 @@ export const work: WorkItem[] = [
     year: '2023',
     stack: ['Pandas', 'NumPy', 'Thematic coding'],
     summary:
-      'Quantitative and qualitative analysis of the Ukraine–Russia conflict’s impact on African students, with structured thematic coding for data-driven insights.',
+      'Quant + qualitative analysis of the conflict’s impact on African students, with structured thematic coding.',
   },
   {
     title: 'Math × Chemistry Correlation Study',
@@ -59,6 +59,6 @@ export const work: WorkItem[] = [
     year: '2022',
     stack: ['Python regression', 'Matplotlib', 'Tableau'],
     summary:
-      'Correlation study on Mathematics and Chemistry performance using regression analysis and visualization to support actionable recommendations.',
+      'Regression analysis on subject performance, visualized for actionable recommendations.',
   },
 ]

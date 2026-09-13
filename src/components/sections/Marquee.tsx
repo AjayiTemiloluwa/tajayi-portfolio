@@ -12,7 +12,7 @@ export function Marquee() {
   const { scrollY } = useScroll()
   const velocity = useVelocity(scrollY)
   const smooth = useSpring(velocity, { stiffness: 170, damping: 44, mass: 0.7 })
-  const skew = useTransform(smooth, [-2400, 2400], [-2.6, 2.6], { clamp: true })
+  const skew = useTransform(smooth, [-2400, 2400], [-2, 2], { clamp: true })
 
   const row = [...marqueeItems, ...marqueeItems]
   return (
@@ -22,7 +22,7 @@ export function Marquee() {
           {row.map((item, i) => (
             <span key={i} className="flex items-center gap-8 whitespace-nowrap">
               <span className="font-mono text-[11px] uppercase tracking-[0.26em] text-fg/45">{item}</span>
-              <span className="h-1 w-1 rounded-full bg-gold/60" />
+              <span className="h-1 w-1 rounded-full bg-sepia/60" />
             </span>
           ))}
         </div>

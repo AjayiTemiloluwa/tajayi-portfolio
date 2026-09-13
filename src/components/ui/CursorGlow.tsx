@@ -7,7 +7,7 @@ import { useEffect, useRef } from 'react'
  * Adopted from Inchstone. Two layers: a wide ambient halo (slow, weighty
  * trail) and a small hot core (snappy follow). Screen-blended so it reads
  * as light cast onto the surface. Grows over interactive elements and
- * surfaces a short gold instruction label beneath it.
+ * surfaces a short sepia instruction label beneath it.
  */
 const INTERACTIVE_SELECTOR =
   'a, button, [role="button"], input, select, textarea, summary, [data-cursor]'

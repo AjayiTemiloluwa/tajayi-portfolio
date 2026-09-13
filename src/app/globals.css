@@ -2,45 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Foundation tokens — adopted from Inchstone v2 ─────────────────────
-   LIGHT is the base; `.dark` re-themes. Tailwind reads the *-rgb triplets,
-   hand-written CSS reads the rich vars. */
+/* ═════════════════════════════════════════════════════════════
+   Temiloluwa Samuel Ajayi — design system
+   Robin Noguier–style: classic B&W, typography-first surfaces, one
+   sepia-brown accent, and an archival photo treatment (B&W + brown
+   vignette + film grain). LIGHT is the base; `.dark` re-themes.
+   ═════════════════════════════════════════════════════════════ */
 :root {
-  /* canonical six tokens — light (paper) values */
-  --ink: #f6f1e7; /* background — warm paper */
-  --parchment: #241e15; /* primary text — warm espresso */
-  --gold: #96762f; /* the single accent — deep brass for light bg */
-  --gold-dim: #7c6338; /* gold at rest / secondary */
+  /* canonical tokens — light (paper) values */
+  --ink: #f3efe6; /* background — warm paper */
+  --parchment: #221c13; /* primary text — deep espresso */
+  --sepia: #7c5f3a; /* the single accent — vignette brown */
+  --sepia-dim: #5e492c; /* accent at rest / secondary */
   --ember: #9e4028; /* warnings / overdue / destructive */
   --moss: #465c41; /* completed / achieved */
 
   /* RGB triplets (Tailwind alpha support) */
-  --ink-rgb: 246 241 231;
-  --parchment-rgb: 36 30 21;
-  --bg-rgb: 246 241 231;
-  --fg-rgb: 36 30 21;
-  --gold-rgb: 150 118 47;
-  --gold-dim-rgb: 124 99 56;
+  --ink-rgb: 243 239 230;
+  --parchment-rgb: 34 28 19;
+  --bg-rgb: 243 239 230;
+  --fg-rgb: 34 28 19;
+  --sepia-rgb: 124 95 58;
+  --sepia-dim-rgb: 94 73 44;
   --ember-rgb: 158 64 40;
   --moss-rgb: 70 92 65;
-  --gold-glow-rgb: 176 142 82;
+  --sepia-glow-rgb: 141 111 69;
 
   /* derived */
-  --bg: #f6f1e7;
-  --fg: #241e15;
-  --fg-rgb: 36 30 21;
+  --bg: #f3efe6;
+  --fg: #221c13;
   --surface: rgba(255, 255, 255, 0.55);
-  --surface-solid: #fbf7ef;
-  --mist: rgba(36, 30, 21, 0.08);
-  --mist-solid: #efe9dc;
-  --mist-solid-rgb: 239 233 220;
-  --glass: rgba(36, 30, 21, 0.03);
-  --glass-border: rgba(36, 30, 21, 0.13);
-  --glass-strong: rgba(251, 247, 239, 0.94);
-  --glass-gold-bg: rgba(150, 118, 47, 0.09);
-  --glass-gold-border: rgba(150, 118, 47, 0.28);
+  --surface-solid: #faf6ee;
+  --mist: rgba(34, 28, 19, 0.08);
+  --mist-solid: #ece7db;
+  --mist-solid-rgb: 236 231 219;
+  --glass: rgba(34, 28, 19, 0.03);
+  --glass-border: rgba(34, 28, 19, 0.13);
+  --glass-strong: rgba(250, 246, 238, 0.94);
+  --glass-sepia-bg: rgba(124, 95, 58, 0.09);
+  --glass-sepia-border: rgba(124, 95, 58, 0.28);
 
-  /* fluid type scale — always use these, never a raw px in a component */
+  /* fluid type scale — never a raw px in a component */
   --text-display: clamp(2.5rem, 4vw + 1.5rem, 4.75rem);
   --text-h1: clamp(1.75rem, 1.6vw + 1.4rem, 2.5rem);
   --text-heading: clamp(1.0625rem, 0.3vw + 1rem, 1.25rem);
@@ -62,35 +64,35 @@
 
 /* ── DARK — the canonical look ── */
 .dark {
-  --ink: #0a0908; /* background — warm near-black */
-  --parchment: #f3efe6; /* primary text / light surfaces */
-  --gold: #b8935a; /* the single accent — muted brass */
-  --gold-dim: #8a6d42; /* gold at rest / secondary */
-  --ember: #7a3b2e;
+  --ink: #0d0b09; /* background — warm near-black */
+  --parchment: #f2ede3; /* primary text / light surfaces */
+  --sepia: #a68a60; /* the single accent — vignette brown */
+  --sepia-dim: #7d6645;
+  --ember: #8a4a38;
   --moss: #4a5d45;
 
-  --ink-rgb: 10 9 8;
-  --parchment-rgb: 243 239 230;
-  --bg-rgb: 10 9 8;
-  --gold-rgb: 184 147 90;
-  --gold-dim-rgb: 138 109 66;
-  --ember-rgb: 122 59 46;
+  --ink-rgb: 13 11 9;
+  --parchment-rgb: 242 237 227;
+  --bg-rgb: 13 11 9;
+  --fg-rgb: 242 237 227;
+  --sepia-rgb: 166 138 96;
+  --sepia-dim-rgb: 125 102 69;
+  --ember-rgb: 138 74 56;
   --moss-rgb: 74 93 65;
-  --gold-glow-rgb: 203 170 111;
+  --sepia-glow-rgb: 200 171 124;
 
-  --bg: #0a0908;
-  --fg: #f3efe6;
-  --fg-rgb: 243 239 230;
-  --surface: rgba(10, 9, 8, 0.6);
-  --surface-solid: #16120f;
-  --mist: rgba(243, 239, 230, 0.08);
-  --mist-solid: #191512;
-  --mist-solid-rgb: 25 21 18;
-  --glass: rgba(243, 239, 230, 0.04);
-  --glass-border: rgba(243, 239, 230, 0.1);
-  --glass-strong: rgba(10, 9, 8, 0.9);
-  --glass-gold-bg: rgba(184, 147, 90, 0.1);
-  --glass-gold-border: rgba(184, 147, 90, 0.2);
+  --bg: #0d0b09;
+  --fg: #f2ede3;
+  --surface: rgba(13, 11, 9, 0.6);
+  --surface-solid: #15110e;
+  --mist: rgba(242, 237, 227, 0.08);
+  --mist-solid: #1a1613;
+  --mist-solid-rgb: 26 22 19;
+  --glass: rgba(242, 237, 227, 0.04);
+  --glass-border: rgba(242, 237, 227, 0.1);
+  --glass-strong: rgba(13, 11, 9, 0.9);
+  --glass-sepia-bg: rgba(166, 138, 96, 0.1);
+  --glass-sepia-border: rgba(166, 138, 96, 0.2);
 }
 
 /* ── Base ── */
@@ -121,11 +123,11 @@ body {
 }
 
 ::selection {
-  background: rgba(var(--gold-rgb) / 0.35);
+  background: rgba(var(--sepia-rgb) / 0.35);
   color: var(--fg);
 }
 
-/* Thin gold scrollbar */
+/* Thin sepia scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -133,12 +135,12 @@ body {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(var(--gold-rgb) / 0.35);
+  background: rgba(var(--sepia-rgb) / 0.35);
   border-radius: 999px;
   border: 2px solid var(--bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(var(--gold-rgb) / 0.55);
+  background: rgba(var(--sepia-rgb) / 0.55);
 }
 
 /* ── Dynamic color utilities ── */
@@ -147,10 +149,16 @@ body {
 }
 .text-ink {
   color: var(--fg);
-
-/* ═══════════════════════════════════════════════════════════════════
-   SIGNATURE EFFECTS — adopted from Inchstone
-   ═══════════════════════════════════════════════════════════════════ */
+}
+.bg-surface {
+  background: var(--surface);
+}
+.bg-surface-solid {
+  background: var(--surface-solid);
+}
+.bg-mist {
+  background: var(--mist);
+}
 
 /* ── Cursor Light — soft warm glow that trails the pointer ── */
 .cursor-glow {
@@ -165,8 +173,6 @@ body {
 .cursor-glow.is-active {
   opacity: 1;
 }
-
-/* Wide ambient pool — the "light on the background" (screen-blended) */
 .cursor-glow-halo {
   position: absolute;
   top: 0;
@@ -178,13 +184,11 @@ body {
   mix-blend-mode: screen;
   background: radial-gradient(
     circle closest-side,
-    rgba(184, 147, 90, 0.16),
-    rgba(184, 147, 90, 0.07) 42%,
+    rgba(166, 138, 96, 0.16),
+    rgba(166, 138, 96, 0.07) 42%,
     transparent 72%
   );
 }
-
-/* Small hot centre — makes the source feel real */
 .cursor-glow-core {
   position: absolute;
   top: 0;
@@ -196,21 +200,19 @@ body {
   mix-blend-mode: screen;
   background: radial-gradient(
     circle closest-side,
-    rgba(243, 239, 230, 0.13),
-    rgba(184, 147, 90, 0.05) 55%,
+    rgba(242, 237, 227, 0.13),
+    rgba(166, 138, 96, 0.05) 55%,
     transparent 78%
   );
 }
-
-/* Contextual cursor label (set via data-cursor="…") — a solid pill */
 .cursor-glow-label {
   position: absolute;
   top: 0;
   left: 0;
   padding: 3px 8px;
   border-radius: 999px;
-  background: rgba(var(--gold-rgb) / 0.96);
-  color: #0a0908;
+  background: rgba(var(--sepia-rgb) / 0.96);
+  color: #0d0b09;
   border: 1px solid rgba(255, 255, 255, 0.16);
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.24);
   font-family: var(--font-mono), monospace;
@@ -221,19 +223,17 @@ body {
   opacity: 0;
   transition: opacity 0.2s ease;
 }
-
-/* Light theme: deeper gold needs cream text; glow reads as multiply */
 html:not(.dark) .cursor-glow-label {
   color: #fffdf6;
   border-color: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 1px 8px rgba(88, 67, 28, 0.3);
+  box-shadow: 0 1px 8px rgba(66, 48, 22, 0.3);
 }
 html:not(.dark) .cursor-glow-halo {
   mix-blend-mode: multiply;
   background: radial-gradient(
     circle closest-side,
-    rgba(150, 118, 47, 0.12),
-    rgba(150, 118, 47, 0.05) 42%,
+    rgba(124, 95, 58, 0.12),
+    rgba(124, 95, 58, 0.05) 42%,
     transparent 72%
   );
 }
@@ -241,8 +241,8 @@ html:not(.dark) .cursor-glow-core {
   mix-blend-mode: multiply;
   background: radial-gradient(
     circle closest-side,
-    rgba(122, 96, 38, 0.1),
-    rgba(150, 118, 47, 0.04) 55%,
+    rgba(94, 73, 44, 0.1),
+    rgba(124, 95, 58, 0.04) 55%,
     transparent 78%
   );
 }
@@ -259,7 +259,7 @@ html:not(.dark) .cursor-glow-core {
   border-radius: inherit;
   background: radial-gradient(
     420px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(184, 147, 90, 0.12),
+    rgba(166, 138, 96, 0.12),
     transparent 46%
   );
   opacity: 0;
@@ -271,7 +271,7 @@ html:not(.dark) .cursor-glow-core {
 }
 .card::before,
 .glass::before,
-.glass-gold::before,
+.glass-sepia::before,
 [data-fx]::before {
   content: '';
   position: absolute;
@@ -279,7 +279,7 @@ html:not(.dark) .cursor-glow-core {
   border-radius: inherit;
   background: radial-gradient(
     380px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(184, 147, 90, 0.1),
+    rgba(166, 138, 96, 0.1),
     transparent 46%
   );
   opacity: 0;
@@ -288,7 +288,7 @@ html:not(.dark) .cursor-glow-core {
 }
 .card:hover::before,
 .glass:hover::before,
-.glass-gold:hover::before,
+.glass-sepia:hover::before,
 [data-fx]:hover::before {
   opacity: 1;
 }
@@ -297,14 +297,14 @@ html:not(.dark) .cursor-glow-core {
 .text-lit {
   transition: text-shadow 0.5s ease, filter 0.5s ease, transform 0.5s ease;
   filter: brightness(1.06);
-  text-shadow: 0 0 18px rgba(255, 241, 200, 0.2);
+  text-shadow: 0 0 18px rgba(240, 224, 190, 0.2);
 }
 h1.text-lit,
 h2.text-lit,
 h3.text-lit,
 .font-display.text-lit {
   filter: brightness(1.09);
-  text-shadow: 0 0 36px rgba(255, 236, 190, 0.34), 0 0 2px rgba(255, 241, 200, 0.2);
+  text-shadow: 0 0 36px rgba(240, 224, 190, 0.34), 0 0 2px rgba(240, 224, 190, 0.2);
 }
 h4.text-lit,
 h5.text-lit,
@@ -318,18 +318,7 @@ blockquote.text-lit,
 dd.text-lit,
 figcaption.text-lit {
   transform: translateY(-1px);
-  text-shadow: 0 7px 24px rgba(255, 243, 205, 0.18);
-}
-
-}
-.bg-surface {
-  background: var(--surface);
-}
-.bg-surface-solid {
-  background: var(--surface-solid);
-}
-.bg-mist {
-  background: var(--mist);
+  text-shadow: 0 7px 24px rgba(240, 224, 190, 0.18);
 }
 
 /* ── Surfaces (glass family) ── */
@@ -341,28 +330,27 @@ figcaption.text-lit {
   background: var(--glass-strong);
   border: 1px solid var(--glass-border);
 }
-.glass-gold {
-  background: var(--glass-gold-bg);
-  border: 1px solid var(--glass-gold-border);
+.glass-sepia {
+  background: var(--glass-sepia-bg);
+  border: 1px solid var(--glass-sepia-border);
 }
 
-/* ── Hairline — 1px gold-dim at 20% ── */
+/* ── Hairline — 1px sepia-dim at 20% ── */
 .hairline {
-  border: 1px solid rgba(var(--gold-rgb) / 0.2);
+  border: 1px solid rgba(var(--sepia-rgb) / 0.2);
 }
 .hairline-top {
-  border-top: 1px solid rgba(var(--gold-rgb) / 0.2);
+  border-top: 1px solid rgba(var(--sepia-rgb) / 0.2);
 }
 .hairline-bottom {
-  border-bottom: 1px solid rgba(var(--gold-rgb) / 0.2);
+  border-bottom: 1px solid rgba(var(--sepia-rgb) / 0.2);
 }
 .hairline-left {
-  border-left: 1px solid rgba(var(--gold-rgb) / 0.2);
+  border-left: 1px solid rgba(var(--sepia-rgb) / 0.2);
 }
 .hairline-right {
-  border-right: 1px solid rgba(var(--gold-rgb) / 0.2);
+  border-right: 1px solid rgba(var(--sepia-rgb) / 0.2);
 }
-
 
 /* ── Desktop scroll-ripple trail ── */
 .scrollfx-layer {
@@ -375,8 +363,8 @@ figcaption.text-lit {
 .scroll-ripple {
   position: absolute;
   border-radius: 999px;
-  border: 1px solid rgba(var(--gold-rgb) / 0.1);
-  box-shadow: inset 0 0 6px rgba(var(--gold-rgb) / 0.03);
+  border: 1px solid rgba(var(--sepia-rgb) / 0.1);
+  box-shadow: inset 0 0 6px rgba(var(--sepia-rgb) / 0.03);
   transform: translate(-50%, -50%) scale(0.85);
   opacity: 0.2;
   animation: scroll-ripple 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -405,7 +393,7 @@ figcaption.text-lit {
 }
 .border-beam {
   position: relative;
-  box-shadow: 0 0 0 1px rgba(var(--gold-rgb) / 0.35);
+  box-shadow: 0 0 0 1px rgba(var(--sepia-rgb) / 0.35);
 }
 .border-beam::before {
   content: '';
@@ -416,7 +404,7 @@ figcaption.text-lit {
   background: conic-gradient(
     from var(--beam-angle),
     transparent 0%,
-    rgba(var(--gold-rgb) / 0.9) 14%,
+    rgba(var(--sepia-rgb) / 0.9) 14%,
     transparent 30%
   );
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
@@ -425,6 +413,7 @@ figcaption.text-lit {
   mask-composite: exclude;
   animation: beam-spin 3.4s linear infinite;
   pointer-events: none;
+}
 
 /* ── Touch FX (mobile) ── */
 .touch-halo {
@@ -432,7 +421,7 @@ figcaption.text-lit {
   width: 120px;
   height: 120px;
   border-radius: 999px;
-  background: radial-gradient(closest-side, rgba(255, 243, 196, 0.22), transparent 70%);
+  background: radial-gradient(closest-side, rgba(233, 217, 184, 0.22), transparent 70%);
   mix-blend-mode: screen;
   transform: translate(-50%, -50%) scale(0.4);
   animation: touch-halo 0.7s ease-out forwards;
@@ -443,7 +432,7 @@ figcaption.text-lit {
   width: 72px;
   height: 72px;
   border-radius: 999px;
-  border: 1px solid rgba(var(--gold-rgb) / 0.4);
+  border: 1px solid rgba(var(--sepia-rgb) / 0.4);
   transform: translate(-50%, -50%) scale(0.3);
   animation: touch-ripple 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   pointer-events: none;
@@ -456,8 +445,8 @@ figcaption.text-lit {
   height: 3px;
   margin: -1.5px;
   border-radius: 999px;
-  background: #ffe9a8;
-  box-shadow: 0 0 8px 1.5px rgba(255, 222, 130, 0.75);
+  background: #e9d9b8;
+  box-shadow: 0 0 8px 1.5px rgba(222, 190, 130, 0.75);
   transform: translate(0, 0) scale(1);
   opacity: 1;
   animation: touch-spark 0.75s cubic-bezier(0.12, 0.8, 0.3, 1) forwards;
@@ -547,31 +536,67 @@ figcaption.text-lit {
   animation: ping-soft 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* Ambient gold haze behind hero */
+/* Ambient sepia haze behind hero */
 .hero-haze {
   background: radial-gradient(
     ellipse 80% 55% at 50% 0%,
-    rgba(var(--gold-rgb) / 0.13),
+    rgba(var(--sepia-rgb) / 0.1),
     transparent 70%
   );
 }
 
-/* Gold gradient display text */
-.text-gold-grad {
+/* Sepia gradient display text */
+.text-sepia-grad {
   background: linear-gradient(
     115deg,
-    rgba(var(--gold-rgb) / 1) 0%,
-    rgba(var(--gold-glow-rgb) / 1) 45%,
-    rgba(var(--gold-rgb) / 0.75) 100%
+    rgba(var(--sepia-rgb) / 1) 0%,
+    rgba(var(--sepia-glow-rgb) / 1) 45%,
+    rgba(var(--sepia-rgb) / 0.75) 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Hover outline for work rows (overrides the glass hairline) */
-.gold-outline {
-  border-color: rgb(var(--gold-rgb) / 0.45) !important;
+/* Hover outline for work rows */
+.sepia-outline {
+  border-color: rgb(var(--sepia-rgb) / 0.45) !important;
+}
+
+/* ── Archival photo treatment — the B&W identity ─────────────────
+   .photo-bw    grayscale + warm sepia wash + gentle lift on hover
+   .photo-vign  brown vignette overlay — pairs with .photo-bw
+   .photo-plate framed archival print: grain + vignette + hairline   */
+.photo-bw {
+  filter: grayscale(1) sepia(0.18) contrast(1.04) brightness(0.99);
+  transition: filter 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.photo-bw:hover {
+  filter: grayscale(1) sepia(0.08) contrast(1.06) brightness(1.03);
+}
+.photo-vign::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 38%,
+    transparent 54%,
+    rgba(84, 62, 34, 0.14) 80%,
+    rgba(58, 42, 22, 0.3) 100%
+  );
+  pointer-events: none;
+}
+.photo-plate::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0.35;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.16'/%3E%3C/svg%3E");
 }
 
 /* ── Reduced motion: stillness is a feature ── */
@@ -594,11 +619,13 @@ figcaption.text-lit {
     opacity: 1;
     animation: none;
   }
+  .photo-bw {
+    transition: none;
+  }
   .text-lit,
   h1.text-lit,
   h2.text-lit,
   h3.text-lit,
-  .font-display.text-lit,
   h4.text-lit,
   h5.text-lit,
   h6.text-lit,
@@ -606,9 +633,9 @@ figcaption.text-lit {
   li.text-lit,
   blockquote.text-lit,
   dd.text-lit,
-  figcaption.text-lit {
+  figcaption.text-lit,
+  .font-display.text-lit {
     transition: none !important;
     transform: none !important;
   }
-}
 }

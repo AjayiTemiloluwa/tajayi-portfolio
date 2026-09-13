@@ -1,5 +1,6 @@
 /**
- * Single source of truth — every fact here comes from Temiloluwa's CV.
+ * Single source of truth — every fact here comes from Temiloluwa's CV
+ * and the extracted research documents (_extracted/).
  * Part 1: profile, hero stats, marquee, balance pillars.
  */
 
@@ -19,30 +20,40 @@ export const profile = {
   cvPath: '/Temiloluwa-Ajayi-CV.pdf',
   availability: 'Open to new opportunities',
   statement:
-    'I build intelligent systems by day and grow people by design — a deliberately balanced life across engineering, finance, education and community.',
+    'Petroleum engineer by training, AI builder by obsession — machine learning for safe, sustainable energy.',
 } as const
 
+/** The lens every section is cut through. */
+export const focusAxes = [
+  'AI',
+  'Energy',
+  'Sustainability',
+  'Finance',
+] as const
+
 export const heroStats = [
-  { value: '5+', label: 'industries & teams shaped' },
-  { value: '95%', label: 'learner certification rate' },
+  { value: '4', label: 'SPE manuscripts in the pipeline' },
+  { value: '94%', label: 'peak kick-detection accuracy' },
   { value: '40%', label: 'manual reporting eliminated' },
   { value: '4', label: 'continents taught' },
 ] as const
 
 export const marqueeItems = [
+  'Ensemble Learning',
+  'Explainable AI',
+  'Well-Control Engineering',
+  'Drilling Hydraulics',
+  'Satellite Remote Sensing',
+  'Gas-Flaring Analytics',
+  'Fracturing-Fluid Rheology',
+  'Random Forest',
   'Python',
-  'Machine Learning',
-  'Deep Learning & Computer Vision',
   'SQL',
   'Next.js · TypeScript',
   'PostgreSQL · Prisma',
-  'n8n Automation',
-  'Tableau',
-  'R Programming',
   'Financial Engineering',
-  'Process Optimization',
-  'Dashboard Design',
-  'Project Management',
+  'Tableau',
+  'n8n Automation',
 ] as const
 
 export const balancePillars = [
@@ -53,8 +64,8 @@ export const balancePillars = [
   },
   {
     icon: 'chart',
-    title: 'Analyze',
-    body: 'Data pipelines, models and dashboards that turn noise into decisions across energy, finance and education.',
+    title: 'Model',
+    body: 'Machine learning for energy: kick detection, gas-flaring forecasting and data-driven fracturing-fluid design.',
   },
   {
     icon: 'cap',

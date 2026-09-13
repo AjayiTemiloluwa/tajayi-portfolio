@@ -5,13 +5,13 @@ import { AnimatePresence, motion } from 'motion/react'
 
 /**
  * RotatingWord — crossfades a stack of phrases in the hero. Robin
- * Noguier-style energy with Inchstone's silk easing.
+ * Noguier-style energy with silk easing.
  */
 const PHRASES = [
-  'automation systems that carry real weight.',
-  'data pipelines that decide, not decorate.',
-  'predictive models that see around corners.',
-  'dashboards that make numbers speak.',
+  'well-control AI that catches kicks before they escalate.',
+  'satellite analytics that put gas flaring on the record.',
+  'fracturing fluids optimized by random forests.',
+  'financial models that price a sustainable transition.',
   'young coders into confident builders.',
 ]
 
@@ -35,7 +35,7 @@ export function RotatingWord() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: '-0.9em', opacity: 0 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="text-gold-grad whitespace-nowrap"
+          className="text-sepia-grad whitespace-nowrap"
         >
           {PHRASES[index]}
         </motion.span>
