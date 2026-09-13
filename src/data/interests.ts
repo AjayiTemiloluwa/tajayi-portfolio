@@ -66,7 +66,7 @@ export const interests: Interest[] = [
   {
     icon: 'gamepad',
     title: 'Gaming',
-    blurb: 'Strategy worlds as systems homework — mechanics, balance and the design of fair rules.',
+    blurb: 'Strategy worlds as systems homework — mechanics, economies and the design of fair rules.',
   },
   {
     icon: 'plug',

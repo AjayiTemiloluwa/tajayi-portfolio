@@ -1,7 +1,7 @@
 /**
  * Single source of truth — every fact here comes from Temiloluwa's CV
  * and the extracted research documents (_extracted/).
- * Part 1: profile, hero stats, marquee, balance pillars.
+ * Part 1: profile, marquee, the four disciplines.
  */
 
 export const profile = {
@@ -51,7 +51,10 @@ export const marqueeItems = [
   'n8n Automation',
 ] as const
 
-export const balancePillars = [
+/**
+ * The four disciplines — shown in the layout, never said in the copy.
+ */
+export const pillars = [
   {
     icon: 'cpu',
     title: 'Build',

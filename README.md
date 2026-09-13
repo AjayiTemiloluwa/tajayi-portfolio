@@ -1,6 +1,6 @@
 # Temiloluwa Samuel Ajayi — Digital Resume
 
-A breathtaking single-page portfolio that tells one story: a **deliberately balanced life** —
+A breathtaking single-page portfolio that tells one story: a **fully lived life** —
 intelligent automation, honest analytics, and people who grow.
 
 ## Design
@@ -21,9 +21,9 @@ Structure inspiration: [kolabdul](https://kolabdul.vercel.app/) · hero energy f
 
 ## Sections
 
-1. **Hero** — availability, location, display-scale name, rotating "I build …" line, signature stats
+1. **Hero** — availability, location, display-scale name, rotating "I build …" line, foundations strip
 2. **Marquee** — infinite craft ticker
-3. **Balance** — the narrative + four pillars (Build · Analyze · Teach · Lead) + education
+3. **About** — the story + four indexed pillars (Build · Model · Teach · Lead) + education
 4. **Selected Work** — six projects with the featured one wearing the border beam
 5. **Experience** — gold-dotted timeline, all five roles
 6. **Community** — leadership cards + honor roll

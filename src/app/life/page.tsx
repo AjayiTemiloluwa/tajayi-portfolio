@@ -67,7 +67,7 @@ export default function LifePage() {
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fg/60 sm:text-base">
             The résumé, in monochrome.
           </p>
-          <div className="mt-10 gap-4 [column-fill:balance] sm:columns-2 md:columns-3">
+          <div className="mt-10 gap-4 sm:columns-2 md:columns-3">
             {gallery.map((photo, i) => (
               <Reveal key={photo.src} delay={i * 60} className="mb-4 break-inside-avoid">
                 <figure className="glass hairline group overflow-hidden rounded-xl" data-fx>

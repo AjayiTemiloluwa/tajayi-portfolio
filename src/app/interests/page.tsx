@@ -46,8 +46,8 @@ export default function InterestsPage() {
     <PageShell
       ghost="DRIVE"
       kicker="Interests"
-      title={[{ text: 'A deliberately ' }, { text: 'balanced', sepia: true }, { text: ' life.' }]}
-      blurb="Serious work, fully lived — one curiosity, eleven lenses, from drilling automation to Sunday jollof."
+      title={[{ text: 'One curiosity, ' }, { text: 'eleven lenses.', sepia: true }]}
+      blurb="Serious work, fully lived — from drilling automation to Sunday jollof."
     >
       <section className="relative mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
         <h2 className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-fg/50">What pulls me</h2>

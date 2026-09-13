@@ -2,7 +2,7 @@ import { Nav } from "@/components/Nav";
 import { ScrollProgress } from "@/components/anim/ScrollProgress";
 import { Hero } from "@/components/sections/Hero";
 import { Marquee } from "@/components/sections/Marquee";
-import { Balance } from "@/components/sections/Balance";
+import { About } from "@/components/sections/About";
 import { Work } from "@/components/sections/Work";
 import { Research } from "@/components/sections/Research";
 import { PhotoScroll } from "@/components/sections/PhotoScroll";
@@ -31,7 +31,7 @@ export default function Home() {
           <main>
             <Hero />
             <Marquee />
-            <Balance />
+            <About />
             <Research />
             <PhotoScroll />
             <Work />
