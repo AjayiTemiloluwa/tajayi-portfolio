@@ -17,6 +17,8 @@ export const profile = {
   phoneHref: 'tel:+2349057253126',
   linkedin: 'https://www.linkedin.com/in/temiloluwa-ajayi-b5b566236/',
   linkedinLabel: 'LinkedIn — Temiloluwa Ajayi',
+  github: 'https://github.com/AjayiTemiloluwa',
+  githubLabel: 'GitHub — AjayiTemiloluwa',
   cvPath: '/Temiloluwa-Ajayi-CV.pdf',
   availability: 'Open to new opportunities',
   statement:

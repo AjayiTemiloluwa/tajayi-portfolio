@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowLeft, ArrowUpRight } from 'lucide-react'
 import { profile } from '@/data/resume'
+import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons'
 import { MaskText } from '@/components/anim/MaskText'
 import { GhostWord } from '@/components/anim/GhostWord'
 import type { MaskSegment } from '@/components/anim/MaskText'
@@ -41,6 +42,7 @@ export function PageShell({
             {[
               ['/work', 'Work'],
               ['/research', 'Research'],
+              ['/#credentials', 'Credentials'],
               ['/interests', 'Interests'],
               ['/life', 'Life'],
             ].map(([href, label]) => (
@@ -92,6 +94,26 @@ export function PageShell({
               {profile.initials}
             </span>
             <span className="font-display font-bold text-parchment">{profile.name}</span>
+            <span className="ml-1 flex items-center gap-1.5">
+              <a
+                href={profile.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profile"
+                className="glass inline-flex h-8 w-8 items-center justify-center rounded-lg text-fg/55 transition hover:border-sepia hover:text-sepia"
+              >
+                <GithubIcon className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profile"
+                className="glass inline-flex h-8 w-8 items-center justify-center rounded-lg text-fg/55 transition hover:border-sepia hover:text-sepia"
+              >
+                <LinkedinIcon className="h-3.5 w-3.5" aria-hidden="true" />
+              </a>
+            </span>
           </div>
           <p className="font-mono text-[11px] text-fg/40">© {year} · Built with quiet obsession in {profile.location}</p>
           <Link

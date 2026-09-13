@@ -55,6 +55,24 @@ export const viewport: Viewport = {
   themeColor: "#0A0908", // --ink
 };
 
+/** Structured data — who this is, and where else to find him. */
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Temiloluwa Samuel Ajayi",
+  jobTitle: "AI & Automation Analyst",
+  email: "mailto:temiloluwaajayi2019@gmail.com",
+  url: "https://temiloluwaajayi.vercel.app",
+  sameAs: [
+    "https://github.com/AjayiTemiloluwa",
+    "https://www.linkedin.com/in/temiloluwa-ajayi-b5b566236/",
+  ],
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "University of Ibadan" },
+    { "@type": "CollegeOrUniversity", name: "WorldQuant University" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -65,6 +83,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full bg-paper text-ink font-sans">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <CursorGlow />
         <ScrollFx />
         <ScrollRipples />

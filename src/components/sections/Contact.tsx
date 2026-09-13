@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from 'motion/react'
 import { Mail, Phone, Download, ArrowUp } from 'lucide-react'
 import { profile } from '@/data/resume'
+import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons'
 import { GhostWord } from '@/components/anim/GhostWord'
 import { MaskText } from '@/components/anim/MaskText'
 
@@ -13,17 +14,7 @@ import { MaskText } from '@/components/anim/MaskText'
  * masked heading, cards rising in, footer bar pinned to the bottom.
  */
 
-function LinkedinIcon({ className = '' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
-      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V8h4v2.5" />
-      <rect width="4" height="12" x="2" y="9" />
-      <circle cx="4" cy="4" r="2" />
-    </svg>
-  )
-}
-
-const ICONS = { mail: Mail, phone: Phone, linkedin: LinkedinIcon, download: Download } as const
+const ICONS = { mail: Mail, phone: Phone, linkedin: LinkedinIcon, github: GithubIcon, download: Download } as const
 
 type ContactLink = {
   href: string
@@ -38,8 +29,9 @@ type ContactLink = {
 
 const LINKS: ContactLink[] = [
   { href: `mailto:${profile.email}`, cursor: 'SAY HELLO', icon: 'mail', label: 'Email', value: profile.email, featured: true },
-  { href: profile.phoneHref, cursor: 'CALL', icon: 'phone', label: 'Phone', value: profile.phoneDisplay },
   { href: profile.linkedin, cursor: 'OPEN', icon: 'linkedin', label: 'LinkedIn', value: profile.linkedinLabel, external: true },
+  { href: profile.github, cursor: 'STAR', icon: 'github', label: 'GitHub', value: 'github.com/AjayiTemiloluwa', external: true },
+  { href: profile.phoneHref, cursor: 'CALL', icon: 'phone', label: 'Phone', value: profile.phoneDisplay },
   { href: profile.cvPath, cursor: 'DOWNLOAD', icon: 'download', label: 'Resume', value: 'Download the CV (PDF)', download: true },
 ]
 
@@ -75,7 +67,7 @@ export function Contact() {
         </motion.p>
 
         {/* links */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {LINKS.map((l, i) => {
             const Icon = ICONS[l.icon as keyof typeof ICONS]
             return (
@@ -108,6 +100,24 @@ export function Contact() {
           <div className="flex items-center gap-3">
             <span className="hairline flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-sepia">{profile.initials}</span>
             <span className="font-display font-bold text-parchment">{profile.name}</span>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="glass ml-1 inline-flex h-8 w-8 items-center justify-center rounded-lg text-fg/55 transition hover:border-sepia hover:text-sepia"
+            >
+              <GithubIcon className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
+            <a
+              href={profile.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="glass inline-flex h-8 w-8 items-center justify-center rounded-lg text-fg/55 transition hover:border-sepia hover:text-sepia"
+            >
+              <LinkedinIcon className="h-3.5 w-3.5" aria-hidden="true" />
+            </a>
           </div>
           <p className="font-mono text-[11px] text-fg/40">
             © {year} · Built with quiet obsession in {profile.location}

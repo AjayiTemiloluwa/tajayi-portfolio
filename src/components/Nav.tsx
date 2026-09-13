@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { profile } from '@/data/resume'
+import { GithubIcon } from '@/components/ui/BrandIcons'
 
 /**
  * Nav — sticky glass bar with hairline bottom. Logo is the TA monogram;
@@ -23,6 +24,7 @@ export function Nav() {
           {[
             ['/work', 'Work'],
             ['/research', 'Research'],
+            ['/#credentials', 'Credentials'],
             ['/interests', 'Interests'],
             ['/life', 'Life'],
           ].map(([href, label]) => (
@@ -37,6 +39,16 @@ export function Nav() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2">
+          <a
+            href={profile.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub profile"
+            data-cursor="GITHUB"
+            className="glass hidden h-9 w-9 items-center justify-center rounded-lg text-fg/60 transition hover:border-sepia hover:text-sepia sm:inline-flex"
+          >
+            <GithubIcon className="h-4 w-4" aria-hidden="true" />
+          </a>
           <span className="hidden items-center gap-2 rounded-full bg-moss/15 px-3 py-1.5 lg:inline-flex">
             <span className="relative flex h-1.5 w-1.5">
               <span className="ping-soft absolute inline-flex h-full w-full rounded-full bg-moss" />

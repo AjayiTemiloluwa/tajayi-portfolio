@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { ArrowRight, ChevronDown, Download, MapPin } from 'lucide-react'
+import { ArrowRight, Award, ChevronDown, Download, MapPin } from 'lucide-react'
 import { profile, heroStats, focusAxes } from '@/data/resume'
 import { RotatingWord } from '@/components/ui/RotatingWord'
 import { CountUp } from '@/components/anim/CountUp'
@@ -111,6 +111,23 @@ export function Hero() {
                   Download CV
                 </a>
               </motion.div>
+
+              {/* the single line — digital foundations */}
+              <motion.p
+                {...enter(1.1)}
+                className="mt-7 flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[10px] uppercase tracking-[0.18em] text-fg/45"
+              >
+                <Award className="h-3.5 w-3.5 shrink-0 text-sepia" aria-hidden="true" />
+                <span>Google-certified data analyst</span>
+                <span className="text-sepia" aria-hidden="true">·</span>
+                <span>Aspire Leaders ’24</span>
+                <span className="text-sepia" aria-hidden="true">·</span>
+                <span>SPE service awardee</span>
+                <span className="text-sepia" aria-hidden="true">·</span>
+                <a href="/#credentials" className="text-sepia/80 transition hover:text-sepia">
+                  All credentials ↗
+                </a>
+              </motion.p>
             </motion.div>
           </div>
 
