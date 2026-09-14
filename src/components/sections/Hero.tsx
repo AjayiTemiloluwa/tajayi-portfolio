@@ -32,8 +32,8 @@ export function Hero() {
     <section ref={heroRef} id="top" className="relative overflow-hidden">
       <div className="hero-haze pointer-events-none absolute inset-x-0 top-0 h-[120%]" aria-hidden="true" />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
-        <div className="grid items-center gap-12 lg:grid-cols-[1fr_310px] lg:gap-16">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-16 sm:px-8 sm:pt-24">
+        <div className="grid items-center gap-10 lg:grid-cols-[1fr_310px] lg:gap-14">
           <div>
             {/* display name — levitates and ripples away from the cursor, parallax exit */}
             <motion.div style={reduced ? undefined : { y: nameY, opacity: nameFade }}>
@@ -100,7 +100,7 @@ export function Hero() {
           </div>
 
           {/* archival plate — portrait, grayscale + brown vignette + grain */}
-          <motion.div {...enter(0.9)} className="mx-auto w-full max-w-[300px] lg:mx-0 lg:max-w-none">
+          <motion.div {...enter(0.9)} className="mx-auto w-full max-w-[260px] sm:max-w-[300px] lg:mx-0 lg:max-w-none">
             <figure className="photo-plate hairline relative overflow-hidden rounded-2xl p-2 glass" data-fx>
               <div className="photo-vign relative overflow-hidden rounded-xl">
                 <Image
@@ -119,7 +119,7 @@ export function Hero() {
 
 
         {/* scroll cue */}
-        <div className="mt-16 flex justify-center">
+        <div className="mt-12 flex justify-center">
           <motion.div
             animate={reduced ? {} : { y: [0, 9, 0] }}
             transition={{ duration: 1.7, repeat: Infinity, ease: 'easeInOut' }}

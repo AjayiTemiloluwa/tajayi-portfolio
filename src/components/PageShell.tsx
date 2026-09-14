@@ -115,7 +115,7 @@ export function PageShell({
               </a>
             </span>
           </div>
-          <p className="font-mono text-[11px] text-fg/40">© {year} · Built with quiet obsession in {profile.location}</p>
+          <p className="font-mono text-[11px] text-fg/40">© {year} · {profile.location}</p>
           <Link
             href="/#contact"
             data-cursor="SAY HELLO"

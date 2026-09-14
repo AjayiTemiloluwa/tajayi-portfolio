@@ -74,8 +74,7 @@ export default function LifePage() {
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">Off the clock</p>
           <h2 className="mt-3 max-w-2xl font-display text-2xl font-bold text-parchment sm:text-3xl">The hours that refill the tank.</h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fg/60 sm:text-base">
-            Work is only half the compound interest. The other half is cooking, training, gaming, wiring and mixing —
-            each one a different control problem, all of them keeping the main one sharp.{' '}
+            Cooking, training, gaming, wiring and mixing — each one its own control problem.{' '}
             <Link href="/interests" className="text-sepia transition hover:text-parchment">
               The full curiosity shelf ↗
             </Link>

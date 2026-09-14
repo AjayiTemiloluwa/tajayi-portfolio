@@ -47,7 +47,7 @@ export default function ResearchPage() {
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div className="flex min-w-0 items-start gap-4">
                       <span className="glass mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sepia">
-                        <FlaskConical className="h-4.5 w-4.5" aria-hidden="true" />
+                        <FlaskConical className="h-[18px] w-[18px]" aria-hidden="true" />
                       </span>
                       <div className="min-w-0">
                         <h3 className="font-display text-xl font-bold leading-snug text-parchment sm:text-2xl">{study.title}</h3>

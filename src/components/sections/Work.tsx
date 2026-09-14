@@ -62,7 +62,7 @@ function Row({ item, index, active, setActive }: { item: WorkItem; index: number
   )
 }
 
-export function Work() {
+export function Work({ embedded = false }: { embedded?: boolean }) {
   const sectionRef = useRef<HTMLElement | null>(null)
   const reduced = useReducedMotion()
   const [active, setActive] = useState<number | null>(null)
@@ -84,22 +84,19 @@ export function Work() {
   }
 
   return (
-    <section id="work" ref={sectionRef} onMouseMove={onMove} onMouseLeave={() => setActive(null)} className="relative scroll-mt-20 overflow-hidden hairline-top bg-mist/40">
-      <GhostWord word="WORK" className="top-2 sm:top-4" range={70} />
-      <div className="relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <div className="flex flex-wrap items-end justify-between gap-4">
+    <section id="work" ref={sectionRef} onMouseMove={onMove} onMouseLeave={() => setActive(null)} className="relative scroll-mt-20 overflow-hidden bg-mist/40">
+      {!embedded && <GhostWord word="WORK" className="top-2 sm:top-4" range={70} />}
+      <div className={`relative mx-auto w-full max-w-6xl px-5 ${embedded ? 'pt-16 pb-16 sm:px-8 sm:pb-20' : 'py-20 sm:px-8 sm:py-28'}`}>
+        {!embedded && (
           <div>
             <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">
               Selected work
             </motion.p>
             <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-parchment sm:text-5xl">
-              <MaskText segments={[{ text: 'Things I’ve built that ' }, { text: 'decide.', sepia: true }]} />
+              <MaskText segments={[{ text: 'The work ' }, { text: 'ledger.', sepia: true }]} />
             </h2>
           </div>
-          <motion.p initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.25 }} className="max-w-sm text-sm leading-relaxed text-fg/55">
-            Systems shipped at Sankore, SLB and in between — measured by what they saved, surfaced or settled.
-          </motion.p>
-        </div>
+        )}
 
         <div className="mt-10 space-y-4">
           {work.map((item, i) => (

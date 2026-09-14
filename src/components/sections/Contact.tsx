@@ -63,7 +63,7 @@ export function Contact() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-4 hidden max-w-2xl text-base leading-relaxed text-fg/65 sm:mt-6 sm:block sm:text-lg"
         >
-          My inbox is open. I reply like the deadline depends on it.
+          For opportunities, collaborations and questions, email is the fastest route.
         </motion.p>
 
         {/* links — compact rows on mobile so the whole footer fits one screen */}
@@ -120,7 +120,7 @@ export function Contact() {
             </a>
           </div>
           <p className="font-mono text-[11px] text-fg/40">
-            © {year} · Built with quiet obsession in {profile.location}
+            © {year} · {profile.location}
           </p>
           <a
             href="#top"

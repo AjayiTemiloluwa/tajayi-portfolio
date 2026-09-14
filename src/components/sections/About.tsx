@@ -51,15 +51,14 @@ export function About() {
             <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-sepia">The builder</p>
             <div className="mt-5 space-y-4 text-base leading-relaxed text-fg/65">
               <p>
-                I&apos;m {profile.name} — trained in petroleum engineering, an AI builder by obsession, and a
-                financial-engineering student at <span className="font-medium text-parchment">WorldQuant University</span>. The
-                plan: a career at the intersection of AI, energy, sustainability and finance — machine learning that makes
-                energy safer, cleaner and better capitalized, wherever the data lives.
+                I&apos;m {profile.name} — trained in petroleum engineering, now building AI and automation systems, and
+                reading for an M.Sc in financial engineering at{' '}
+                <span className="font-medium text-parchment">WorldQuant University</span>. The common thread: data applied
+                to real operations — energy first, capital next.
               </p>
               <p>
-                The record so far runs from well-control ML to satellite flaring analytics; the other half runs from
-                teaching Python on four continents to leading teams — plus cooking, lifting, rewiring things. Every
-                streak is compound interest. <span className="font-medium text-parchment">Build, model, teach, lead</span>.
+                Along the way: freelance data science, an SLB internship, teaching Python on four continents, and leading
+                student teams.
               </p>
             </div>
           </motion.div>

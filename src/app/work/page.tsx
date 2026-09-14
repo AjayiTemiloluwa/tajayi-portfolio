@@ -7,7 +7,7 @@ import { PageShell } from '@/components/PageShell'
  */
 export const metadata = {
   title: 'Work — Temiloluwa Samuel Ajayi',
-  description: 'Systems shipped at work, school and in between — compliance platforms, escalation engines, pipelines and research studies.',
+  description: 'Compliance platforms, escalation engines, data pipelines and research studies — shipped at Sankore, SLB and GOLEARN Africa.',
 }
 
 export default function WorkPage() {
@@ -15,10 +15,10 @@ export default function WorkPage() {
     <PageShell
       ghost="WORK"
       kicker="Selected work"
-      title={[{ text: 'Things I’ve built that ' }, { text: 'decide.', sepia: true }]}
-      blurb="Shipped at Sankore, SLB and in between."
+      title={[{ text: 'The work ' }, { text: 'ledger.', sepia: true }]}
+      blurb="Built at Sankore, SLB, GOLEARN Africa and in between."
     >
-      <Work />
+      <Work embedded />
     </PageShell>
   )
 }

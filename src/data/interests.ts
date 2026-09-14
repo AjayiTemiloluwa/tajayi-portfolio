@@ -61,7 +61,7 @@ export const interests: Interest[] = [
   {
     icon: 'dumbbell',
     title: 'Calisthenics',
-    blurb: 'Bodyweight discipline — the same compound-interest logic, applied to the body instead of the portfolio.',
+    blurb: 'Bodyweight discipline — progress through consistency, measured one rep at a time.',
   },
   {
     icon: 'gamepad',

@@ -20,7 +20,7 @@ export const chapters: Chapter[] = [
   {
     year: '2022',
     title: 'First proof',
-    body: 'First freelance data science work while the academics catch fire — three awards in one year.',
+    body: 'First freelance data science work — and three academic awards in the same year.',
     highlights: ['Dean\'s List Award', 'Federal Government Scholarship', 'Foursquare National Scholarship', 'Math × Chemistry correlation study'],
   },
   {

@@ -58,21 +58,21 @@ export const pillars = [
   {
     icon: 'cpu',
     title: 'Build',
-    body: 'AI & automation systems that carry real operational weight — from compliance engines to full-stack platforms.',
+    body: 'AI and automation systems in daily use — compliance engines and full-stack platforms.',
   },
   {
     icon: 'chart',
     title: 'Model',
-    body: 'Machine learning for energy and capital: kick detection, gas-flaring forecasting, fracturing-fluid design — extending into models that price the energy transition.',
+    body: 'Machine learning for energy and capital — kick detection, flaring forecasting, fluid design, transition risk.',
   },
   {
     icon: 'cap',
     title: 'Teach',
-    body: 'Python and data literacy for K–12 and adult learners across Africa, Asia, Europe and North America.',
+    body: 'Python and data literacy for learners across four continents.',
   },
   {
     icon: 'users',
     title: 'Lead',
-    body: 'Logistics, IT and volunteer teams — from energy summits to Gen-AI workshops — with data behind every call.',
+    body: 'Logistics, IT and volunteer teams across energy summits and workshops.',
   },
 ] as const

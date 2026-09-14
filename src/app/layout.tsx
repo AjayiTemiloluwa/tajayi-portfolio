@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://temiloluwaajayi.vercel.app"),
   title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
   description:
-    "Building a career at the intersection of AI, energy, sustainability and finance — well-control ML, satellite flaring analytics, financial engineering for the energy transition, and data literacy taught across four continents.",
+    "Building a career at the intersection of AI, energy, sustainability and finance — machine learning for safe, sustainable energy.",
   keywords: [
     "Temiloluwa Ajayi",
     "AI",
