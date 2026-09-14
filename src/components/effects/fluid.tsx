@@ -207,20 +207,45 @@ export function FluidText({
 
   return (
     <span ref={wrapRef} className={className} aria-label={text} role="text">
-      {text.split('').map((ch, i) =>
-        ch === ' ' ? (
-          <span key={i}> </span>
-        ) : (
-          <span
-            key={`${i}-${ch}`}
-            ref={el => { charRefs.current[i] = el }}
-            aria-hidden="true"
-            className="inline-block will-change-transform"
-          >
-            {ch}
-          </span>
-        ),
-      )}
+      {(() => {
+        // Every glyph is its own inline-block so the cursor can pull it around,
+        // but that also lets the browser break inside long words at arbitrary
+        // letters — the headline could wrap with a lone "s" from "Samuel"
+        // stranded on its own line. Group the glyphs by word (nowrap) so lines
+        // may only ever break on spaces.
+        const tokens = text.split(/(\s+)/)
+        const out: ReactNode[] = []
+        let gi = 0 // global glyph index across the whole string
+        tokens.forEach((tok, ti) => {
+          if (/\s/.test(tok)) {
+            out.push(
+              <span key={`tok-${ti}`} className="whitespace-pre">
+                {tok}
+              </span>,
+            )
+            gi += tok.length
+          } else {
+            out.push(
+              <span key={`tok-${ti}`} className="inline-block whitespace-nowrap">
+                {tok.split('').map(ch => {
+                  const i = gi++
+                  return (
+                    <span
+                      key={`${i}-${ch}`}
+                      ref={el => { charRefs.current[i] = el }}
+                      aria-hidden="true"
+                      className="inline-block will-change-transform"
+                    >
+                      {ch}
+                    </span>
+                  )
+                })}
+              </span>,
+            )
+          }
+        })
+        return out
+      })()}
     </span>
   )
 }
