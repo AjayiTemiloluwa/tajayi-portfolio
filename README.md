@@ -24,11 +24,14 @@ Structure inspiration: [kolabdul](https://kolabdul.vercel.app/) · hero energy f
 1. **Hero** — availability, location, display-scale name, rotating "I build …" line, foundations strip
 2. **Marquee** — infinite craft ticker
 3. **About** — the story + four indexed pillars (Build · Model · Teach · Lead) + education
-4. **Selected Work** — six projects with the featured one wearing the border beam
-5. **Experience** — gold-dotted timeline, all five roles
-6. **Community** — leadership cards + honor roll
-7. **Skills** — grouped chips + interests
-8. **Contact** — border-beam email card, phone, LinkedIn, CV download
+4. **Research** — SPE manuscripts with downloadable theses/drafts + grad-school roadmap
+5. **PhotoScroll** — archival film reel between the work and the words
+6. **Selected Work** — the work ledger, six projects with the featured one wearing the border beam
+7. **Experience** — gold-dotted timeline, all five roles
+8. **Certifications** — verified credentials grouped by track (verify / PDF), framed awards, foundations strip
+9. **Community** — leadership cards + honor roll
+10. **Skills** — grouped chips + interests
+11. **Contact** — border-beam email card, phone, LinkedIn, CV download
 
 ## Run
 
