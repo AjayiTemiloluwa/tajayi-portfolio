@@ -58,7 +58,7 @@ export function Hero() {
               </motion.p>
 
               <motion.p {...enter(0.85)} className="mt-6 max-w-xl text-base leading-relaxed text-fg/65 sm:text-lg">
-                I build <RotatingWord />
+                I&apos;m building a career at the intersection of <RotatingWord />
               </motion.p>
 
               <motion.div {...enter(1)} className="mt-9 flex flex-wrap items-center gap-4">

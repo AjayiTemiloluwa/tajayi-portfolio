@@ -4,15 +4,16 @@ import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 
 /**
- * RotatingWord — crossfades a stack of phrases in the hero. Robin
- * Noguier-style energy with silk easing.
+ * RotatingWord — crossfades the intersections the career is built on.
+ * Vision, not inventory: the rotation sweeps the whole span of the
+ * work, not a list of past artifacts.
  */
 const PHRASES = [
-  'well-control AI that catches kicks before they escalate.',
-  'satellite analytics that put gas flaring on the record.',
-  'fracturing fluids optimized by random forests.',
-  'financial models that price a sustainable transition.',
-  'young coders into confident builders.',
+  'artificial intelligence & energy.',
+  'machine learning & sustainability.',
+  'data & capital.',
+  'remote sensing & accountability.',
+  'engineering & education.',
 ]
 
 export function RotatingWord() {

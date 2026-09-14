@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://temiloluwaajayi.vercel.app"),
   title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
   description:
-    "Petroleum engineer turned AI builder — ensemble ML for well control, satellite analytics for gas flaring, and financial engineering for the energy transition. Lagos, Nigeria.",
+    "Building a career at the intersection of AI, energy, sustainability and finance — well-control ML, satellite flaring analytics, financial engineering for the energy transition, and data literacy taught across four continents.",
   keywords: [
     "Temiloluwa Ajayi",
     "AI",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
     description:
-      "Machine learning for the energy problem — well-control AI, flaring analytics, fluid design. Drafts inside.",
+      "Machine intelligence for safe, sustainable, well-capitalized energy — a career built at the intersection of AI, energy, sustainability and finance.",
     type: "website",
   },
 };

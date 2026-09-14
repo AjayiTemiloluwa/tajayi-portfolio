@@ -52,12 +52,14 @@ export function About() {
             <div className="mt-5 space-y-4 text-base leading-relaxed text-fg/65">
               <p>
                 I&apos;m {profile.name} — petroleum engineer by training, AI builder by obsession, financial engineer in
-                the making at <span className="font-medium text-parchment">WorldQuant University</span>. My focus:
-                machine learning for energy — well control, flaring analytics, fluid design.
+                the making at <span className="font-medium text-parchment">WorldQuant University</span>. The plan: a
+                career at the intersection of AI, energy, sustainability and finance — machine learning that makes
+                energy safer, cleaner and better capitalized, wherever the data lives.
               </p>
               <p>
-                The other half: teaching Python on four continents, leading teams, cooking, lifting, rewiring things.
-                Every streak is compound interest. <span className="font-medium text-parchment">Build, model, teach, lead</span>.
+                The record so far runs from well-control ML to satellite flaring analytics; the other half runs from
+                teaching Python on four continents to leading teams — plus cooking, lifting, rewiring things. Every
+                streak is compound interest. <span className="font-medium text-parchment">Build, model, teach, lead</span>.
               </p>
             </div>
           </motion.div>

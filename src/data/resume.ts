@@ -22,7 +22,7 @@ export const profile = {
   cvPath: '/Temiloluwa-Ajayi-CV.pdf',
   availability: 'Open to new opportunities',
   statement:
-    'Petroleum engineer by training, AI builder by obsession — machine learning for safe, sustainable energy.',
+    'Building a career at the intersection of AI, energy, sustainability and finance — machine intelligence that makes energy safer, cleaner and better capitalized.',
 } as const
 
 /** The lens every section is cut through. */
@@ -63,7 +63,7 @@ export const pillars = [
   {
     icon: 'chart',
     title: 'Model',
-    body: 'Machine learning for energy: kick detection, gas-flaring forecasting and data-driven fracturing-fluid design.',
+    body: 'Machine learning for energy and capital: kick detection, gas-flaring forecasting, fracturing-fluid design — extending into models that price the energy transition.',
   },
   {
     icon: 'cap',
