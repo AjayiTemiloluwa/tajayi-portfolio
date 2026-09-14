@@ -1,14 +1,13 @@
 'use client'
 
 import { motion, useReducedMotion } from 'motion/react'
-import Link from 'next/link'
 import { skillGroups } from '@/data/community'
 import { GhostWord } from '@/components/anim/GhostWord'
 import { MaskText } from '@/components/anim/MaskText'
 
 /**
  * Skills — "TOOLKIT" ghost, masked heading, chips springing in like
- * popcorn with a stagger, interests line easing up last.
+ * popcorn with a stagger. The off-the-clock life lives on /life now.
  */
 export function Skills() {
   const reduced = useReducedMotion()
@@ -17,7 +16,7 @@ export function Skills() {
       <GhostWord word="TOOLKIT" className="top-0 sm:top-2" range={56} />
       <div className="relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
         <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">
-          Skills &amp; Interests
+          Toolkit
         </motion.p>
         <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-parchment sm:text-5xl">
           <MaskText segments={[{ text: 'The toolkit behind the ' }, { text: 'results', sepia: true }, { text: '.' }]} delay={0.08} />
@@ -55,19 +54,6 @@ export function Skills() {
             </motion.div>
           ))}
         </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-8 font-mono text-xs leading-relaxed tracking-wide text-fg/45"
-        >
-          OFF THE CLOCK —{' '}
-          <Link href="/interests" className="text-sepia transition hover:text-parchment">
-            Cooking · Calisthenics · Gaming · Circuits &amp; cooling · Sound
-          </Link>
-        </motion.p>
       </div>
     </section>
   )

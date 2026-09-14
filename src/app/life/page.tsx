@@ -1,4 +1,7 @@
+import Link from 'next/link'
+import { ChefHat, Dumbbell, Gamepad2, Plug, AudioLines } from 'lucide-react'
 import { chapters } from '@/data/chapters'
+import { interests } from '@/data/interests'
 import { PageShell } from '@/components/PageShell'
 import { Reveal } from '@/components/ui/Reveal'
 import { ClipImage } from '@/components/anim/ClipImage'
@@ -16,6 +19,12 @@ const gallery = [
   { src: '/images/field.jpg', w: 663, h: 847, tag: 'Moments', place: 'Lagos, NG', alt: 'A moment in Lagos' },
   { src: '/images/community-2.jpg', w: 1600, h: 1066, tag: 'Community', place: 'Teams', alt: 'Working with teams' },
 ]
+
+/** The off-the-clock five — pulled from the curiosity shelf by title. */
+const OFF_THE_CLOCK_ICONS = { 'chef-hat': ChefHat, dumbbell: Dumbbell, gamepad: Gamepad2, plug: Plug, audio: AudioLines } as const
+const offTheClock = interests
+  .filter((i) => i.icon in OFF_THE_CLOCK_ICONS)
+  .map((i) => ({ ...i, Icon: OFF_THE_CLOCK_ICONS[i.icon as keyof typeof OFF_THE_CLOCK_ICONS] }))
 
 /**
  * /life — the years that made me: 2021 → Now as alternating timeline
@@ -57,6 +66,36 @@ export default function LifePage() {
             </Reveal>
           ))}
         </ol>
+      </section>
+
+      {/* off the clock — the hours that refill the tank */}
+      <section className="hairline-top">
+        <div className="mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+          <p className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">Off the clock</p>
+          <h2 className="mt-3 max-w-2xl font-display text-2xl font-bold text-parchment sm:text-3xl">The hours that refill the tank.</h2>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fg/60 sm:text-base">
+            Work is only half the compound interest. The other half is cooking, training, gaming, wiring and mixing —
+            each one a different control problem, all of them keeping the main one sharp.{' '}
+            <Link href="/interests" className="text-sepia transition hover:text-parchment">
+              The full curiosity shelf ↗
+            </Link>
+          </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {offTheClock.map((interest, i) => (
+              <Reveal key={interest.title} delay={i * 60} className="h-full">
+                <div className="glass hairline h-full rounded-xl p-5" data-fx>
+                  <div className="flex items-center gap-3">
+                    <span className="glass-sepia inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sepia">
+                      <interest.Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                    </span>
+                    <h3 className="font-display text-lg font-bold text-parchment">{interest.title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-fg/60">{interest.blurb}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* gallery — the faces behind the years */}
