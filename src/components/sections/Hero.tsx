@@ -113,14 +113,6 @@ export function Hero() {
                   className="photo-bw h-auto w-full object-cover"
                 />
               </div>
-              <figcaption className="flex items-center justify-between gap-2 px-1 pb-1 pt-3">
-                <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-fg/45">
-                  {profile.location} · 2026
-                </span>
-                <span className="font-mono text-[9px] font-bold uppercase tracking-[0.2em] text-sepia">
-                  Plate 01
-                </span>
-              </figcaption>
             </figure>
           </motion.div>
         </div>
