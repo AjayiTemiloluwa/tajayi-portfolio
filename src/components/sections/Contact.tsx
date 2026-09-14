@@ -40,18 +40,18 @@ export function Contact() {
   const reduced = useReducedMotion()
 
   return (
-    <footer id="contact" className="sticky bottom-0 z-0 -mt-[100svh] flex min-h-[100svh] flex-col justify-between overflow-hidden hairline-top">
+    <footer id="contact" className="sticky bottom-0 z-0 flex min-h-[100svh] flex-col justify-between overflow-hidden hairline-top">
       <div className="hero-haze pointer-events-none absolute inset-x-0 bottom-0 h-[130%] rotate-180" aria-hidden="true" />
       <GhostWord word="HELLO" className="top-6 sm:top-10" range={80} />
 
-      <div className="relative mx-auto w-full max-w-6xl px-5 pt-24 sm:px-8 sm:pt-32">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pt-14 sm:px-8 sm:pt-20">
         <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">
           Say hello
         </motion.p>
 
         <h2
           className="mt-4 max-w-4xl font-display font-bold leading-[1.02] tracking-tight text-parchment"
-          style={{ fontSize: 'clamp(2.25rem, 6vw + 1rem, 5.25rem)' }}
+          style={{ fontSize: 'clamp(1.9rem, 4vw + 1rem, 4.5rem)' }}
         >
           <MaskText segments={[{ text: 'Let’s build something that ' }, { text: 'lasts.', sepia: true }]} stagger={0.07} />
         </h2>
@@ -61,13 +61,13 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-fg/65 sm:text-lg"
+          className="mt-4 hidden max-w-2xl text-base leading-relaxed text-fg/65 sm:mt-6 sm:block sm:text-lg"
         >
           My inbox is open. I reply like the deadline depends on it.
         </motion.p>
 
-        {/* links */}
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {/* links — compact rows on mobile so the whole footer fits one screen */}
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {LINKS.map((l, i) => {
             const Icon = ICONS[l.icon as keyof typeof ICONS]
             return (
@@ -81,10 +81,10 @@ export function Contact() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: '-5% 0px' }}
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: 0.25 + i * 0.08 }}
-                className={`group flex h-full flex-col justify-between gap-6 rounded-xl p-6 transition-transform hover:-translate-y-0.5 ${l.featured ? 'border-beam glass-sepia spotlight-card' : 'glass spotlight-card'}`}
+                className={`group flex h-full flex-row items-center gap-3 rounded-xl p-4 transition-transform hover:-translate-y-0.5 sm:flex-col sm:items-stretch sm:justify-between sm:gap-6 sm:p-6 ${l.featured ? 'col-span-2 border-beam glass-sepia spotlight-card lg:col-span-1' : 'glass spotlight-card'}`}
               >
-                <Icon className="h-5 w-5 text-sepia" />
-                <div>
+                <Icon className="h-5 w-5 shrink-0 text-sepia" />
+                <div className="min-w-0">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-fg/50">{l.label}</p>
                   <p className="mt-1 break-all text-sm font-medium text-parchment transition group-hover:text-sepia">{l.value}</p>
                 </div>
@@ -95,8 +95,8 @@ export function Contact() {
       </div>
 
       {/* footer bar */}
-      <div className="relative mt-16 hairline-top">
-        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row sm:px-8">
+      <div className="relative mt-10 hairline-top sm:mt-16">
+        <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-4 px-5 py-5 sm:flex-row sm:px-8 sm:py-8">
           <div className="flex items-center gap-3">
             <span className="hairline flex h-8 w-8 items-center justify-center rounded-lg font-display text-xs font-bold text-sepia">{profile.initials}</span>
             <span className="font-display font-bold text-parchment">{profile.name}</span>
