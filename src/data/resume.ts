@@ -11,7 +11,7 @@ export const profile = {
   lastName: 'Ajayi',
   initials: 'TA',
   role: 'AI & Automation Analyst',
-  location: 'Yaba, Lagos, Nigeria',
+  location: 'Lagos, Nigeria',
   email: 'temiloluwaajayi2019@gmail.com',
   phoneDisplay: '+234 905 725 3126',
   phoneHref: 'tel:+2349057253126',

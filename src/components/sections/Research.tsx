@@ -52,7 +52,6 @@ export function Research() {
               key={area.id}
               {...rise(i * 0.08)}
               className="glass h-full rounded-xl p-6 transition hover:-translate-y-0.5"
-              data-cursor="AREA"
             >
               <p className="font-mono text-sm font-bold tabular-nums text-sepia/70">{area.id}</p>
               <h3 className="mt-3 font-display text-xl font-bold text-parchment">{area.title}</h3>
@@ -75,7 +74,6 @@ export function Research() {
                 className={`group relative overflow-hidden rounded-xl p-6 transition-all duration-300 sm:p-7 ${
                   i === 0 ? 'border-beam glass-sepia' : 'glass'
                 }`}
-                data-cursor="STUDY"
               >
                 <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
                   <div className="flex min-w-0 items-start gap-5">

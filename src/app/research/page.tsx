@@ -27,7 +27,7 @@ export default function ResearchPage() {
         <div className="mt-6 grid gap-4 sm:grid-cols-2">
           {researchAreas.map((area, i) => (
             <Reveal key={area.id} delay={i * 70}>
-              <article className="glass h-full rounded-xl p-6 transition hover:-translate-y-0.5" data-cursor="AREA">
+              <article className="glass h-full rounded-xl p-6 transition hover:-translate-y-0.5">
                 <p className="font-mono text-sm font-bold tabular-nums text-sepia/70">{area.id}</p>
                 <h3 className="mt-3 font-display text-xl font-bold text-parchment">{area.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-fg/60">{area.blurb}</p>

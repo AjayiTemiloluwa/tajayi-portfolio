@@ -127,6 +127,13 @@ body {
   color: var(--fg);
 }
 
+/* Keyboard focus — visible everywhere, warm accent to match the theme */
+:focus-visible {
+  outline: 2px solid rgb(var(--sepia-rgb));
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* Thin sepia scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

@@ -1,29 +1,35 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
+import Link from 'next/link'
 import { AnimatePresence, motion, useMotionValue, useReducedMotion, useSpring } from 'motion/react'
 import { ArrowUpRight } from 'lucide-react'
 import { work, type WorkItem } from '@/data/work'
 import { GhostWord } from '@/components/anim/GhostWord'
 import { MaskText } from '@/components/anim/MaskText'
 
+const MotionLink = motion.create(Link)
+
 /**
  * Work — the Noguier work index: giant ghost word drifting with scroll,
- * masked heading, rows sliding in, and a floating preview card that
- * chases the cursor across rows (desktop only).
+ * masked heading, rows sliding in (each row links to the full ledger on
+ * /work), and a floating preview card that chases the cursor across
+ * rows (desktop only).
  */
 
 function Row({ item, index, active, setActive }: { item: WorkItem; index: number; active: number | null; setActive: (i: number | null) => void }) {
   const reduced = useReducedMotion()
   const featured = item.featured
   return (
-    <motion.article
+    <MotionLink
+      href="/work"
+      aria-label={`${item.title} — open the full work ledger`}
       initial={reduced ? { opacity: 1 } : { opacity: 0, x: -28 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, margin: '-8% 0px' }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: (index % 3) * 0.08 }}
       onMouseEnter={() => setActive(index)}
-      className={`group relative overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 ${featured ? 'border-beam glass-sepia' : 'glass'} ${active === index ? 'sepia-outline' : ''}`}
+      className={`group relative block overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 ${featured ? 'border-beam glass-sepia' : 'glass'} ${active === index ? 'sepia-outline' : ''}`}
       data-cursor="VIEW"
     >
       <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
@@ -52,7 +58,7 @@ function Row({ item, index, active, setActive }: { item: WorkItem; index: number
           </span>
         </div>
       </div>
-    </motion.article>
+    </MotionLink>
   )
 }
 

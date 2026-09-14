@@ -41,19 +41,19 @@ export function About() {
             About
           </motion.p>
           <h2 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-parchment sm:text-5xl">
-            <MaskText segments={[{ text: 'One engineer, ' }, { text: 'four disciplines.', sepia: true }]} delay={0.1} stagger={0.07} />
+            <MaskText segments={[{ text: 'One builder, ' }, { text: 'four disciplines.', sepia: true }]} delay={0.1} stagger={0.07} />
           </h2>
         </div>
 
         {/* two mirrored halves — same grid, same weight */}
         <div className="mt-14 grid items-stretch gap-4 lg:grid-cols-2">
           <motion.div {...fade(0.15)} className="glass rounded-xl p-7" data-fx>
-            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-sepia">The engineer</p>
+            <p className="font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-sepia">The builder</p>
             <div className="mt-5 space-y-4 text-base leading-relaxed text-fg/65">
               <p>
-                I&apos;m {profile.name} — petroleum engineer by training, AI builder by obsession, financial engineer in
-                the making at <span className="font-medium text-parchment">WorldQuant University</span>. The plan: a
-                career at the intersection of AI, energy, sustainability and finance — machine learning that makes
+                I&apos;m {profile.name} — trained in petroleum engineering, an AI builder by obsession, and a
+                financial-engineering student at <span className="font-medium text-parchment">WorldQuant University</span>. The
+                plan: a career at the intersection of AI, energy, sustainability and finance — machine learning that makes
                 energy safer, cleaner and better capitalized, wherever the data lives.
               </p>
               <p>
@@ -95,7 +95,6 @@ export function About() {
                 viewport={{ once: true, margin: '-10% 0px' }}
                 transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: i * 0.09 }}
                 className="spotlight-card glass tilt-card flex h-full flex-col rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1"
-                data-cursor={p.title.toUpperCase()}
               >
                 <div className="flex items-center justify-between">
                   <span className="glass-sepia inline-flex h-11 w-11 items-center justify-center rounded-lg text-sepia">

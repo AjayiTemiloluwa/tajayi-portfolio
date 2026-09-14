@@ -100,7 +100,7 @@ export function Hero() {
           </div>
 
           {/* archival plate — portrait, grayscale + brown vignette + grain */}
-          <motion.div {...enter(0.9)} className="mx-auto w-full max-w-[300px] lg:mx-0 lg:max-w-none" data-cursor="HELLO">
+          <motion.div {...enter(0.9)} className="mx-auto w-full max-w-[300px] lg:mx-0 lg:max-w-none">
             <figure className="photo-plate hairline relative overflow-hidden rounded-2xl p-2 glass" data-fx>
               <div className="photo-vign relative overflow-hidden rounded-xl">
                 <Image

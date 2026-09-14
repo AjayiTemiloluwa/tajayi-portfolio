@@ -56,7 +56,7 @@ export default function InterestsPage() {
             const Icon = ICONS[interest.icon]
             return (
               <Reveal key={interest.title} delay={i * 60}>
-                <article className="glass group h-full rounded-xl p-6 transition hover:-translate-y-0.5" data-cursor="MORE">
+                <article className="glass group h-full rounded-xl p-6 transition hover:-translate-y-0.5">
                   <span className="glass inline-flex h-11 w-11 items-center justify-center rounded-lg text-sepia transition group-hover:border-sepia">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </span>
