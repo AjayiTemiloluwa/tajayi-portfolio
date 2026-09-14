@@ -607,6 +607,7 @@ figcaption.text-lit {
   .touch-ripple,
   .touch-spark,
   .ping-soft,
+  .floaty,
   .border-beam::before {
     animation: none !important;
   }
@@ -638,4 +639,19 @@ figcaption.text-lit {
     transition: none !important;
     transform: none !important;
   }
+}
+
+/* ── Levitation (Float) ───────────────────────────────────────── */
+@keyframes float-y {
+  0%, 100% {
+    transform: translateY(calc(var(--float-amp, 6px) * -0.5)) rotate(var(--float-rot, 0deg));
+  }
+  50% {
+    transform: translateY(calc(var(--float-amp, 6px) * 0.5)) rotate(var(--float-rot, 0deg));
+  }
+}
+.floaty {
+  animation: float-y var(--float-dur, 8s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  will-change: transform;
 }

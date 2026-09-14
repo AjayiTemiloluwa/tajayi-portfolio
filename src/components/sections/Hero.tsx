@@ -3,31 +3,17 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import { motion, useReducedMotion, useScroll, useTransform } from 'motion/react'
-import { ArrowRight, Award, ChevronDown, Download, MapPin } from 'lucide-react'
+import { ArrowRight, Award, ChevronDown, Download } from 'lucide-react'
 import { profile, focusAxes } from '@/data/resume'
 import { RotatingWord } from '@/components/ui/RotatingWord'
+import { Float, FluidText } from '@/components/effects/fluid'
 
 /**
- * Hero — Noguier-style choreography over the B&W identity: per-letter
- * rise, masked entrances, looping scroll cue, and the archival portrait
- * plate — grayscale, brown vignette, film grain.
+ * Hero — Noguier-style choreography over the B&W identity: the full
+ * name levitates and ripples away from the cursor (the Inchstone
+ * greeting treatment), masked entrances, looping scroll cue, and the
+ * archival portrait plate — grayscale, brown vignette, film grain.
  */
-
-function Letters({ text, delay = 0, className = '' }: { text: string; delay?: number; className?: string }) {
-  return (
-    <span className={className} aria-label={text} role="text">
-      {text.split('').map((ch, i) =>
-        ch === ' ' ? (
-          <span key={i} className="inline-block w-[0.28em]" aria-hidden="true" />
-        ) : (
-          <span key={i} aria-hidden="true" className="rise-in inline-block" style={{ animationDelay: `${delay + i * 55}ms` }}>
-            {ch}
-          </span>
-        )
-      )}
-    </span>
-  )
-}
 
 const enter = (delay: number) => ({
   initial: { opacity: 0, y: 18 },
@@ -49,33 +35,16 @@ export function Hero() {
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 pt-28 sm:px-8 sm:pt-36">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_310px] lg:gap-16">
           <div>
-            {/* eyebrow */}
-            <motion.div {...enter(0.1)} className="flex flex-wrap items-center gap-x-5 gap-y-3">
-              <span className="glass-sepia inline-flex items-center gap-2 rounded-full px-3 py-1.5">
-                <span className="relative flex h-2 w-2">
-                  <span className="ping-soft absolute inline-flex h-full w-full rounded-full bg-moss" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-moss" />
-                </span>
-                <span className="font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-parchment">
-                  {profile.availability}
-                </span>
-              </span>
-              <span className="inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.22em] text-fg/50">
-                <MapPin className="h-3.5 w-3.5 text-sepia" aria-hidden="true" />
-                {profile.location}
-              </span>
-            </motion.div>
-
-            {/* display name — parallax exit */}
+            {/* display name — levitates and ripples away from the cursor, parallax exit */}
             <motion.div style={reduced ? undefined : { y: nameY, opacity: nameFade }}>
               <motion.h1
                 {...enter(0.25)}
-                className="mt-8 font-display font-bold leading-[0.98] tracking-tight text-parchment"
+                className="font-display font-bold leading-[0.98] tracking-tight text-parchment"
                 style={{ fontSize: 'clamp(2.75rem, 8.5vw + 1rem, 7.5rem)' }}
               >
-                <Letters text={profile.firstName} delay={250} />
-                <br />
-                <Letters text={profile.lastName} delay={480} />
+                <Float delay={0.6} duration={9} amp={5}>
+                  <FluidText text={`${profile.firstName} ${profile.middleName} ${profile.lastName}`} />
+                </Float>
               </motion.h1>
 
               {/* the lens — AI × Energy × Sustainability × Finance */}
