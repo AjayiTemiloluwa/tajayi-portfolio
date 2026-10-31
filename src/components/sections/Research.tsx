@@ -75,8 +75,8 @@ export function Research() {
                   i === 0 ? 'border-beam glass-sepia' : 'glass'
                 }`}
               >
-                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
-                  <div className="flex min-w-0 items-start gap-5">
+                <div className="flex items-start justify-between gap-x-6 gap-y-2">
+                  <div className="flex min-w-0 flex-1 items-start gap-5">
                     <span className="mt-1.5 font-mono text-sm font-bold tabular-nums text-sepia/70">
                       {String(i + 1).padStart(2, '0')}
                     </span>

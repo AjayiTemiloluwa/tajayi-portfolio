@@ -7,6 +7,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { work, type WorkItem } from '@/data/work'
 import { GhostWord } from '@/components/anim/GhostWord'
 import { MaskText } from '@/components/anim/MaskText'
+import { ProjectVisual } from '@/components/ui/ProjectVisual'
 
 const MotionLink = motion.create(Link)
 
@@ -32,30 +33,46 @@ function Row({ item, index, active, setActive }: { item: WorkItem; index: number
       className={`group relative block overflow-hidden rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5 sm:p-7 ${featured ? 'border-beam glass-sepia' : 'glass'} ${active === index ? 'sepia-outline' : ''}`}
       data-cursor="VIEW"
     >
-      <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-2">
-        <div className="flex min-w-0 items-start gap-5">
-          <span className="mt-1.5 font-mono text-sm font-bold tabular-nums text-sepia/70">
-            {String(index + 1).padStart(2, '0')}
-          </span>
-          <div className="min-w-0">
-            <h3 className="font-display text-xl font-bold leading-snug text-parchment sm:text-2xl">{item.title}</h3>
-            <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-fg/50">
-              {item.org}
-              {featured && <span className="ml-3 rounded-full bg-sepia/15 px-2 py-0.5 text-[9px] font-bold text-sepia">Featured</span>}
-            </p>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-fg/60">{item.summary}</p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {item.stack.map((s) => (
-                <li key={s} className="rounded-full border border-sepia/20 px-2.5 py-1 font-mono text-[10px] text-sepia/90">{s}</li>
-              ))}
-            </ul>
+      <div className="flex flex-col gap-5 sm:flex-row">
+        <ProjectVisual visual={item.visual} featured={featured} />
+
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start justify-between gap-x-6 gap-y-2">
+            <div className="flex min-w-0 flex-1 items-start gap-5">
+              <span className="mt-1.5 font-mono text-sm font-bold tabular-nums text-sepia/70">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <div className="min-w-0">
+                <h3 className="font-display text-xl font-bold leading-snug text-parchment sm:text-2xl">{item.title}</h3>
+                <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.18em] text-fg/50">
+                  {item.org}
+                  {featured && <span className="ml-3 whitespace-nowrap rounded-full bg-sepia/15 px-2 py-0.5 text-[9px] font-bold text-sepia">Featured</span>}
+                </p>
+              </div>
+            </div>
+            <div className="flex shrink-0 items-center gap-3">
+              <span className="font-mono text-sm text-fg/40">{item.year}</span>
+              <span className="glass inline-flex h-9 w-9 items-center justify-center rounded-full text-fg/50 transition group-hover:border-sepia group-hover:text-sepia">
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </div>
           </div>
-        </div>
-        <div className="flex shrink-0 items-center gap-3">
-          <span className="font-mono text-sm text-fg/40">{item.year}</span>
-          <span className="glass inline-flex h-9 w-9 items-center justify-center rounded-full text-fg/50 transition group-hover:border-sepia group-hover:text-sepia">
-            <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-          </span>
+
+          <div className="mt-3 flex flex-wrap items-start gap-4">
+            {item.metric && (
+              <div className="shrink-0 rounded-lg border border-sepia/25 bg-sepia/10 px-3.5 py-2">
+                <p className="font-display text-xl font-bold leading-none text-sepia">{item.metric.value}</p>
+                <p className="mt-1 font-mono text-[9px] font-bold uppercase tracking-[0.12em] text-sepia/70">{item.metric.label}</p>
+              </div>
+            )}
+            <p className="max-w-2xl flex-1 text-sm leading-relaxed text-fg/60">{item.summary}</p>
+          </div>
+
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {item.stack.map((s) => (
+              <li key={s} className="rounded-full border border-sepia/20 px-2.5 py-1 font-mono text-[10px] text-sepia/90">{s}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </MotionLink>
