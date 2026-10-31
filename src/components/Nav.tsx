@@ -3,22 +3,25 @@ import { profile } from '@/data/resume'
 import { GithubIcon } from '@/components/ui/BrandIcons'
 
 /**
- * Nav — sticky glass bar with hairline bottom. Logo is the TA monogram;
- * links are mono route links; the availability pill sits right (hidden on
- * small screens, replaced by a direct email link).
+ * Nav — sticky glass bar with hairline bottom, shared by the home page and
+ * every sub-page (via PageShell) so the header is identical everywhere.
+ * Logo is the TA monogram; links are mono route links; the availability
+ * pill sits right (hidden on small screens, replaced by a direct email
+ * link). `home` only changes where the logo/contact links point — on the
+ * home page they're in-page anchors, on a sub-page they route back to "/".
  */
-export function Nav() {
+export function Nav({ home = true }: { home?: boolean }) {
   return (
     <header className="sticky top-0 z-40 hairline-bottom bg-paper/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-        <a href="#top" className="flex min-w-0 items-center gap-3" aria-label={`${profile.name} — home`}>
+        <Link href={home ? '#top' : '/'} className="flex min-w-0 items-center gap-3" aria-label={`${profile.name} — home`}>
           <span className="hairline flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sepia/10 font-display text-sm font-bold text-sepia">
             {profile.initials}
           </span>
           <span className="hidden min-w-0 font-display text-base font-bold tracking-tight text-parchment sm:block">
             {profile.name}
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {[
@@ -58,13 +61,13 @@ export function Nav() {
               {profile.availability}
             </span>
           </span>
-          <a
-            href="#contact"
+          <Link
+            href={home ? '#contact' : '/#contact'}
             data-cursor="SAY HELLO"
             className="inline-flex h-9 items-center justify-center rounded-lg bg-sepia px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-sepia-dim"
           >
             Contact
-          </a>
+          </Link>
         </div>
       </div>
     </header>

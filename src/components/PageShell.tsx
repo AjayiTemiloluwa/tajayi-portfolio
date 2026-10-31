@@ -4,13 +4,15 @@ import { profile } from '@/data/resume'
 import { GithubIcon, LinkedinIcon } from '@/components/ui/BrandIcons'
 import { MaskText } from '@/components/anim/MaskText'
 import { GhostWord } from '@/components/anim/GhostWord'
+import { Nav } from '@/components/Nav'
 import type { MaskSegment } from '@/components/anim/MaskText'
 
 /**
  * PageShell — shared chrome for the sub-pages (/work, /research,
- * /interests, /life): the same sticky glass Nav as home, a ghost-word
- * header with masked title, and a slim footer bar. Content renders as
- * children between them.
+ * /credentials, /interests, /life): the same sticky glass Nav as home
+ * (so the header is identical everywhere), a ghost-word header with
+ * masked title, and a slim footer bar. Content renders as children
+ * between them.
  */
 export function PageShell({
   ghost,
@@ -28,42 +30,7 @@ export function PageShell({
   const year = new Date().getFullYear()
   return (
     <div id="top" className="min-h-svh bg-paper">
-      <header className="sticky top-0 z-40 hairline-bottom bg-paper/85 backdrop-blur-md">
-        <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-5 sm:px-8">
-          <Link href="/" className="flex min-w-0 items-center gap-3" aria-label={`${profile.name} — home`}>
-            <span className="hairline flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-sepia/10 font-display text-sm font-bold text-sepia">
-              {profile.initials}
-            </span>
-            <span className="hidden min-w-0 font-display text-base font-bold tracking-tight text-parchment sm:block">
-              {profile.name}
-            </span>
-          </Link>
-          <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-            {[
-              ['/work', 'Work'],
-              ['/research', 'Research'],
-              ['/credentials', 'Credentials'],
-              ['/interests', 'Interests'],
-              ['/life', 'Life'],
-            ].map(([href, label]) => (
-              <Link
-                key={href}
-                href={href}
-                className="font-mono text-[11px] uppercase tracking-[0.18em] text-fg/55 transition hover:text-sepia"
-              >
-                {label}
-              </Link>
-            ))}
-          </nav>
-          <Link
-            href="/#contact"
-            data-cursor="SAY HELLO"
-            className="inline-flex h-9 shrink-0 items-center justify-center rounded-lg bg-sepia px-4 font-mono text-[10px] font-bold uppercase tracking-[0.16em] text-ink transition hover:bg-sepia-dim"
-          >
-            Contact
-          </Link>
-        </div>
-      </header>
+      <Nav home={false} />
 
       <main className="relative">
         <section className="relative overflow-hidden hairline-bottom">
