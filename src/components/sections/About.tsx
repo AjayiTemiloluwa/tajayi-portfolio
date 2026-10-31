@@ -54,7 +54,7 @@ export function About() {
                 I&apos;m {profile.name} — trained in petroleum engineering, now building AI and automation systems, and
                 reading for an M.Sc in financial engineering at{' '}
                 <span className="font-medium text-parchment">WorldQuant University</span>. The common thread: data applied
-                to real operations — energy first, capital next.
+                to real operations — energy and climate first, the capital that funds the transition next.
               </p>
               <p>
                 Along the way: freelance data science, an SLB internship, teaching Python on four continents, and leading

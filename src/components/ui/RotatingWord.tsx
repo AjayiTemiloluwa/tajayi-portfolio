@@ -9,10 +9,10 @@ import { AnimatePresence, motion } from 'motion/react'
  * work, not a list of past artifacts.
  */
 const PHRASES = [
-  'artificial intelligence & energy.',
-  'machine learning & sustainability.',
-  'data & capital.',
-  'remote sensing & accountability.',
+  'sustainable energy & climate fintech.',
+  'AI systems & capital markets.',
+  'drilling safety & emissions intelligence.',
+  'machine learning & the energy transition.',
   'engineering & education.',
 ]
 

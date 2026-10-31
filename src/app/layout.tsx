@@ -24,14 +24,15 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://temiloluwaajayi.vercel.app"),
-  title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
+  title: "Temiloluwa Samuel Ajayi — Sustainable Energy & Climate Fintech",
   description:
-    "Building a career at the intersection of AI, energy, sustainability and finance — machine learning for safe, sustainable energy.",
+    "Building a career in sustainable energy and climate fintech — AI systems that make energy operations safer and cleaner, and the financial infrastructure that funds the transition.",
   keywords: [
     "Temiloluwa Ajayi",
+    "Climate Fintech",
+    "Sustainable Energy",
     "AI",
-    "Energy",
-    "Sustainability",
+    "Energy Transition",
     "Well Control",
     "Machine Learning",
     "SPE",
@@ -41,9 +42,9 @@ export const metadata: Metadata = {
     "Portfolio",
   ],
   openGraph: {
-    title: "Temiloluwa Samuel Ajayi — AI × Energy × Sustainability × Finance",
+    title: "Temiloluwa Samuel Ajayi — Sustainable Energy & Climate Fintech",
     description:
-      "Machine intelligence for safe, sustainable, well-capitalized energy — a career built at the intersection of AI, energy, sustainability and finance.",
+      "AI systems for safer, cleaner energy operations and the financial infrastructure that funds the transition — a career built at the intersection of energy, climate, AI and finance.",
     type: "website",
   },
 };
@@ -60,7 +61,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Temiloluwa Samuel Ajayi",
-  jobTitle: "AI & Automation Analyst",
+  jobTitle: "Climate Fintech & AI Systems Builder",
   email: "mailto:temiloluwaajayi2019@gmail.com",
   url: "https://temiloluwaajayi.vercel.app",
   sameAs: [

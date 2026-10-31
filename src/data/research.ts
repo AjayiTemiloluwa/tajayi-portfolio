@@ -39,9 +39,9 @@ export const researchAreas = [
   },
   {
     id: '04',
-    title: 'Finance × Energy',
+    title: 'Climate Fintech',
     blurb:
-      'Financial engineering for the transition — risk, pricing and capital allocation for sustainable operations.',
+      'Financial engineering for the transition — risk, pricing and capital allocation for sustainable energy operations.',
   },
 ] as const
 

@@ -24,7 +24,7 @@ import { Reveal } from '@/components/ui/Reveal'
 export const metadata = {
   title: 'Interests — Temiloluwa Samuel Ajayi',
   description:
-    'AI & intelligent systems, energy & sustainability, financial engineering, teaching — plus cooking, calisthenics, gaming, electrical & refrigeration work, and sound engineering.',
+    'Sustainable energy, climate fintech and AI systems, plus teaching — and the fuller life behind the work: cooking, calisthenics, gaming, electrical & refrigeration work, and sound engineering.',
 }
 
 const ICONS = {

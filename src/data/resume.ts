@@ -10,7 +10,7 @@ export const profile = {
   middleName: 'Samuel',
   lastName: 'Ajayi',
   initials: 'TA',
-  role: 'AI & Automation Analyst',
+  role: 'Climate Fintech & AI Systems Builder',
   location: 'Lagos, Nigeria',
   email: 'temiloluwaajayi2019@gmail.com',
   phoneDisplay: '+234 905 725 3126',
@@ -22,14 +22,14 @@ export const profile = {
   cvPath: '/Temiloluwa-Ajayi-CV.pdf',
   availability: 'Open to new opportunities',
   statement:
-    'Building a career at the intersection of AI, energy, sustainability and finance — machine intelligence that makes energy safer, cleaner and better capitalized.',
+    'Building a career in sustainable energy and climate fintech — AI systems that make energy operations safer and cleaner, and the financial infrastructure that funds the transition.',
 } as const
 
-/** The lens every section is cut through. */
+/** The lens every section is cut through — energy and climate first, AI and capital as the tools. */
 export const focusAxes = [
-  'AI',
   'Energy',
-  'Sustainability',
+  'Climate',
+  'AI',
   'Finance',
 ] as const
 

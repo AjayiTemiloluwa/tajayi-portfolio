@@ -66,6 +66,27 @@ export function Contact() {
           For opportunities, collaborations and questions, email is the fastest route.
         </motion.p>
 
+        <motion.ul
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+          aria-label="Open to"
+          className="mt-6 flex flex-wrap items-center gap-2"
+        >
+          <li className="mr-1 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-sepia">Open to</li>
+          {[
+            'Climate fintech & sustainable-finance roles',
+            'Energy-AI & climate-tech engineering',
+            'Graduate & PhD research positions',
+            'Fellowships & research programs',
+          ].map((o) => (
+            <li key={o} className="rounded-full border border-sepia/25 px-3 py-1 font-mono text-[10px] text-parchment/80">
+              {o}
+            </li>
+          ))}
+        </motion.ul>
+
         {/* links — compact rows on mobile so the whole footer fits one screen */}
         <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {LINKS.map((l, i) => {

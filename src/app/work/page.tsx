@@ -7,7 +7,7 @@ import { PageShell } from '@/components/PageShell'
  */
 export const metadata = {
   title: 'Work — Temiloluwa Samuel Ajayi',
-  description: 'Compliance platforms, escalation engines, data pipelines and research studies — shipped at Sankore, SLB and GOLEARN Africa.',
+  description: 'Fintech compliance platforms, energy-data pipelines and automation engines — shipped at Sankore Investment, SLB and GOLEARN Africa.',
 }
 
 export default function WorkPage() {

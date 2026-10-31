@@ -35,8 +35,8 @@ export const interests: Interest[] = [
   },
   {
     icon: 'trending-up',
-    title: 'Financial Markets & Quant',
-    blurb: 'Financial engineering at WorldQuant University — pricing, risk and the mathematics of decisions under uncertainty.',
+    title: 'Climate Fintech & Quant',
+    blurb: 'Financial engineering at WorldQuant University — pricing, risk and capital allocation for an energy system in transition.',
   },
   {
     icon: 'graduation-cap',
