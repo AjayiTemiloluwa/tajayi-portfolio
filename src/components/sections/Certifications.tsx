@@ -19,7 +19,7 @@ import { profile } from '@/data/resume'
  * counts plate, then every credential grouped by track with verify /
  * download links, and the framed awards photographed as recognition.
  */
-export function Certifications() {
+export function Certifications({ embedded = false }: { embedded?: boolean }) {
   const reduced = useReducedMotion()
   const rise = (delay: number) => ({
     initial: reduced ? { opacity: 1 } : { opacity: 0, y: 22 },
@@ -31,15 +31,19 @@ export function Certifications() {
   const others = allCertifications.filter((c) => !c.featured)
 
   return (
-    <section id="credentials" className="relative scroll-mt-20 overflow-hidden hairline-top">
-      <GhostWord word="PROOF" className="top-0 sm:top-2" range={60} />
-      <div className="relative mx-auto w-full max-w-6xl px-5 py-20 sm:px-8 sm:py-28">
-        <motion.p {...rise(0)} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">
-          Certifications &amp; Recognition
-        </motion.p>
-        <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-parchment sm:text-5xl">
-          <MaskText segments={[{ text: 'Credentials that ' }, { text: 'back the work.', sepia: true }]} delay={0.08} />
-        </h2>
+    <section id="credentials" className={`relative scroll-mt-20 overflow-hidden ${embedded ? '' : 'hairline-top'}`}>
+      {!embedded && <GhostWord word="PROOF" className="top-0 sm:top-2" range={60} />}
+      <div className={`relative mx-auto w-full max-w-6xl px-5 ${embedded ? 'pt-16 pb-20 sm:px-8 sm:pb-28' : 'py-20 sm:px-8 sm:py-28'}`}>
+        {!embedded && (
+          <>
+            <motion.p {...rise(0)} className="font-mono text-[11px] font-bold uppercase tracking-[0.26em] text-sepia">
+              Certifications &amp; Recognition
+            </motion.p>
+            <h2 className="mt-4 font-display text-3xl font-bold tracking-tight text-parchment sm:text-5xl">
+              <MaskText segments={[{ text: 'Credentials that ' }, { text: 'back the work.', sepia: true }]} delay={0.08} />
+            </h2>
+          </>
+        )}
 
         {/* the single line — digital foundations */}
         <motion.div {...rise(0.12)} className="mt-8 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl hairline glass px-5 py-4" data-fx>

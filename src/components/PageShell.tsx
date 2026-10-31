@@ -42,7 +42,7 @@ export function PageShell({
             {[
               ['/work', 'Work'],
               ['/research', 'Research'],
-              ['/#credentials', 'Credentials'],
+              ['/credentials', 'Credentials'],
               ['/interests', 'Interests'],
               ['/life', 'Life'],
             ].map(([href, label]) => (

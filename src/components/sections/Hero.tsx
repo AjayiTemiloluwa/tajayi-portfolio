@@ -92,7 +92,7 @@ export function Hero() {
                 <span className="text-sepia" aria-hidden="true">·</span>
                 <span>SPE service awardee</span>
                 <span className="text-sepia" aria-hidden="true">·</span>
-                <a href="/#credentials" className="text-sepia/80 transition hover:text-sepia">
+                <a href="/credentials" className="text-sepia/80 transition hover:text-sepia">
                   All credentials ↗
                 </a>
               </motion.p>
